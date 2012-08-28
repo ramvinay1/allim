@@ -1,4 +1,4 @@
-#summary Using a small sample data set the main functionality of PoPoolation2 is demonstrated
+#summary Using a small sample data set the main functionality of Allim is demonstrated
 
 
 <wiki:toc max_depth="3" />
