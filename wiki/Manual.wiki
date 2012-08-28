@@ -47,48 +47,62 @@ Allim is developed on Python version 2.7.3. Python 2.7.3 for your operating syst
 ==2.3 Install Biopython==
 Allim requires bio python for efficient fasta sequence reading writing and other sequence manipulations.
 Once python is installed then bio python can be obtained and install with following steps:
-Step1: Download biopython source code from http://biopython.org/DIST/biopython-1.60.tar.gz
-Step2: Uncompress the downloaded file with following command:
+
+*Step1:* Download biopython source code from http://biopython.org/DIST/biopython-1.60.tar.gz
+
+*Step2:* Uncompress the downloaded file with following command:
 	
 {{{
 tar –zxvf biopython-1.60.tar.gz
 }}}
 This command will return the folder/directory numpy-1.6.0
-Step3: go in this uncompressed folder with following command:
+
+*Step3:* go in this uncompressed folder with following command:
 	{{{
 cd biopython-1.60
 }}}
-Step4: To install this python package run these two commands:
+
+*Step4:* To install this python package run these two commands:
 	python setup.py build
 	python setup.py install
 
 ==2.4 Install PICARD==
 Picard comprises Java-based command-line utilities that manipulate SAM/BAM files. It is a collection of many JAVA jar files, which could be downloaded and used directly without any installation.
 
-Step1: Download latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
-Step2: uncompress the downloaded file with following command:
-	{{{
+
+*Step1:* Download latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
+
+*Step2:* uncompress the downloaded file with following command:
+
+{{{
 unzip picard-tools-1.75.zip
 }}}
+
 Allim pipeline used 3 jar files: 1) BuildBamIndex.jar, 2) MergeSamFiles.jar, 3) SortSam.jar, give full path of these three jar files in AllimOptions run file to run Allim pipeline.
 
 ==2.5 Install SAMTOOLS==
 SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
 
-Step1: Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
 
-Step2: Uncompress the downloaded file samtools-0.1.18.tar.bz2 with following command:
+*Step1:* Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
+
+
+*Step2:* Uncompress the downloaded file samtools-0.1.18.tar.bz2 with following command:
+
 {{{
 tar -xvjf samtools-0.1.18.tar.bz2
 }}}
+
 This command will return the folder/directory samtools-0.1.18
-Step3: go in this uncompressed folder samtools-0.1.18 with following command:
+
+*Step3:* go in this uncompressed folder samtools-0.1.18 with following command:
 	
 {{{
 cd samtools-0.1.18
 }}}
 
-Step4: To make samtools executable run make command:
+
+*Step4:* To make samtools executable run make command:
 	
 {{{
 make
@@ -153,9 +167,7 @@ gsnap –help
 }}}
 
 This command will return detail help manual about parameters.
-Note: For detail information how to build GSNAP please read gmap-2012-07-20/
-
-[http://research-pub.gene.com/gmap/src/README GSNAP README]
+Note: For detail information visit GSNAP README file [http://research-pub.gene.com/gmap/src/README GSNAP README]
 
 
 ==2.8 Install R==
