@@ -48,11 +48,16 @@ Allim is developed on Python version 2.7.3. Python 2.7.3 for your operating syst
 Allim requires bio python for efficient fasta sequence reading writing and other sequence manipulations.
 Once python is installed then bio python can be obtained and install with following steps:
 Step1: Download biopython source code from http://biopython.org/DIST/biopython-1.60.tar.gz
-Step2: Uncompress the downloaded file with following command
-	tar –zxvf biopython-1.60.tar.gz
+Step2: Uncompress the downloaded file with following command:
+	
+{{{
+tar –zxvf biopython-1.60.tar.gz
+}}}
 This command will return the folder/directory numpy-1.6.0
-Step3: go in this uncompressed folder with following command
-	cd biopython-1.60
+Step3: go in this uncompressed folder with following command:
+	{{{
+cd biopython-1.60
+}}}
 Step4: To install this python package run these two commands:
 	python setup.py build
 	python setup.py install
@@ -62,8 +67,9 @@ Picard comprises Java-based command-line utilities that manipulate SAM/BAM files
 
 Step1: Download latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
 Step2: uncompress the downloaded file with following command:
-	unzip picard-tools-1.75.zip
-
+	{{{
+unzip picard-tools-1.75.zip
+}}}
 Allim pipeline used 3 jar files: 1) BuildBamIndex.jar, 2) MergeSamFiles.jar, 3) SortSam.jar, give full path of these three jar files in AllimOptions run file to run Allim pipeline.
 
 ==2.5 Install SAMTOOLS==
@@ -72,23 +78,46 @@ SAM Tools provide various utilities for manipulating alignments in the SAM forma
 Step1: Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
 
 Step2: Uncompress the downloaded file samtools-0.1.18.tar.bz2 with following command:
+{{{
 tar -xvjf samtools-0.1.18.tar.bz2
+}}}
 This command will return the folder/directory samtools-0.1.18
-Step3: go in this uncompressed folder samtools-0.1.18 with following command
-	cd samtools-0.1.18
+Step3: go in this uncompressed folder samtools-0.1.18 with following command:
+	
+{{{
+cd samtools-0.1.18
+}}}
+
 Step4: To make samtools executable run make command:
-	make
+	
+{{{
+make
+}}}
+
 After make command an executable called samtools will be created, give full path of samtools executable in AllimOptions run file to run Allim pipeline.
 
 ==2.6 Install bedtools==
 Step1: Download bedTools from http://bedtools.googlecode.com/files/BEDTools.v2.16.2.tar.gz
 Step2: Uncompress the downloaded file “BEDTools.v2.16.2.tar.gz” with following command:
+
+{{{
 tar -xzvf BEDTools.v2.16.2.tar.gz
+}}}
+
 This command will return the folder/directory BEDTools-Version-2.16.2
-Step3: go in this uncompressed folder BEDTools-Version-2.16.2 with following command
-	cd BEDTools-Version-2.16.2
+
+Step3: go in this uncompressed folder BEDTools-Version-2.16.2 with following command:
+	
+{{{
+cd BEDTools-Version-2.16.2
+}}}
+
 Step4: To make samtools executable run make all command:
-	make all
+	
+{{{
+make all
+}}}
+
 After “make all” command; BEDTools-Version-2.16.2/bin sub-folder/sub-directory will be created which contains all betTools executables.
 Allim pipeline used 3 executables: 1) intersectBed, 2) sortBed, 3) bamToBed, give full path of these three executables in AllimOptions run file to run Allim pipeline.
 
@@ -96,19 +125,38 @@ Allim pipeline used 3 executables: 1) intersectBed, 2) sortBed, 3) bamToBed, giv
 
 Step1: Download GSNAP source code from http://research-pub.gene.com/gmap/src/gmap-gsnap-2012-07-20.tar.gz
 Step2: Uncompress the downloaded file “gmap-gsnap-2012-07-20.tar.gz” with following command:
+
+{{{
 tar -xzvf gmap-gsnap-2012-07-20.tar.gz
+}}}
+
 Step3: go in this uncompressed folder “gmap-2012-07-20” with following command:
-	cd gmap-2012-07-20
+	
+{{{
+cd gmap-2012-07-20
+}}}
+
 Step4: To install this python package run these four commands:
+
+{{{
 ./configure
 make
 make check   (optional)
 make install
+}}}
+
 These above four commands will build gsnap and other executables in “/usr/bin”
 Step5: To check gsnap installations run this command:
-	gsnap –help
+	
+{{{
+gsnap –help
+}}}
+
 This command will return detail help manual about parameters.
-Note: For detail information how to build GSNAP please read gmap-2012-07-20/README file.
+Note: For detail information how to build GSNAP please read gmap-2012-07-20/
+
+[http://research-pub.gene.com/gmap/src/README GSNAP README]
+
 
 ==2.8 Install R==
 Operating system specific R source code can be obtained from http://cran.r-project.org/ and follow the instruction to install R.
@@ -117,42 +165,74 @@ NumPy is the fundamental package for scientific computing with Python. It is use
 Step1: Download NumPy package source code from http://sourceforge.net/projects/numpy/files/NumPy/1.6.0/
 
 Step2: Uncompress the downloaded file with following command
-	tar –zxvf numpy-1.6.0.tar.gz
+	
+{{{
+tar –zxvf numpy-1.6.0.tar.gz
+}}}
+
 This command will return the folder/directory numpy-1.6.0
 Step3: go in this uncompressed folder with following command
-	cd numpy-1.6.0
+	
+{{{
+cd numpy-1.6.0
+}}}
+
 Step4: To install this python package run these two commands:
-	python setup.py build
-	python setup.py install
+	
+{{{
+python setup.py build
+python setup.py install
+}}}
 
 ==2.10 Install RPy2==
 This is a python class designed to do R statistics programming in python. In order to install it on any Unix system following steps required:
 Step1: Download RPy2 package source code from http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/
 Step2: Uncompress the downloaded file with following command
-	tar –zxvf rpy2-2.2.2.tar.gz
+	
+{{{
+tar –zxvf rpy2-2.2.2.tar.gz
+}}}
+
 This command will return the folder/directory rpy2-2.2.2
 Step3: go in this uncompressed folder with following command
-	cd rpy2-2.2.2
+	
+{{{
+cd rpy2-2.2.2
+}}}
+
 Step4: To install this python package run these two commands:
-	python setup.py build
-	python setup.py install
+	
+{{{
+python setup.py build
+python setup.py install
+}}}
 
 ==2.11 Install R package car==
 Step1: Download R package car source code from http://cran.r-project.org/src/contrib/car_2.0-12.tar.gz
 Step2: Open terminal and run following command to install:
+
+{{{
 R CMD INSTALL car_2.0-12.tar.gz
+}}}
 
 ==2.12 Install R package multcop==
 Step1: Download R package multcop source code from http://cran.r-project.org/src/contrib/multcomp_1.2-12.tar.gz
 Step2: Open terminal and run following command to install:
+
+{{{
 R CMD INSTALL multcomp_1.2-12.tar.gz
+}}}
 
 ==2.13 Install R package edgeR==
 Step1: Download R package edgeR source code from www.bioconductor.org/packages/2.3/bioc/src/contrib/edgeR_1.0.4.tar.gz
 Step2: Open terminal and run following command to install:
+{{{
 R CMD INSTALL edgeR_1.0.4.tar.gz
+}}}
 
 ==2.14 Install R package limma==
 Step1: Download R package limma source code from http://phase.hpcc.jp/mirrors/stat/R/CRAN/src/contrib/limma_2.0.2.tar.gz
 Step2: Open terminal and run following command to install:
+{{{
 R CMD INSTALL limma_2.0.2.tar.gz
+}}}
