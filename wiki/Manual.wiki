@@ -55,16 +55,23 @@ Once python is installed then bio python can be obtained and install with follow
 {{{
 tar –zxvf biopython-1.60.tar.gz
 }}}
+
 This command will return the folder/directory numpy-1.6.0
 
 *Step3:* go in this uncompressed folder with following command:
-	{{{
+
+{{{
 cd biopython-1.60
 }}}
 
 *Step4:* To install this python package run these two commands:
-	python setup.py build
-	python setup.py install
+
+{{{
+python setup.py build
+python setup.py install
+}}}
+
+
 
 ==2.4 Install PICARD==
 Picard comprises Java-based command-line utilities that manipulate SAM/BAM files. It is a collection of many JAVA jar files, which could be downloaded and used directly without any installation.
