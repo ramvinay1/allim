@@ -3,7 +3,7 @@
 
 <wiki:toc max_depth="3" />
 
-=Introduction=
+=1. Introduction=
 Allim: Allelic imbalance meter offers an integrated and user-friendly solution for measuring allele specific gene expression within species.
 We have developed Allim: a user-friendly pipeline to estimate allelic imbalance in F1 hybrids. Since mapping bias is the largest problem for reliable estimates of allele specific gene expression using RNA-Seq, Allim combines two different measures to account for mapping biases. First, Allim generates a polymorphism aware reference genome that accounts for the sequence variation between the alleles. Second, Allim includes a sequence specific simulation tool to estimate the remaining mapping bias. This estimated mapping bias is then incorporated in the statistical tests for allelic imbalance.
 The pipeline requires whole transcript RNA sequencing (RNA-seq) reads from both parents and the F1 hybrid provided in separate files. Allim was tested on Illumina paired-end RNA-seq reads but it can also handle FASTQ files from other NGS sequencing platforms. The provided parental RNA-seq libraries can be from homozygous parents.
@@ -19,7 +19,7 @@ Five Modules of Allim:
 The source code and the user manual of Allim are available from http://code.google.com/p/allim/
 
 
-=Requirements=
+=2. Requirements=
 
 To use Allim pipeline, user needs to meet these requirements.
   * Linux or Macintosh OSX system or any other Unix 64 bit system with at least 4 GB of RAM and 2 CPU (processors)
@@ -37,15 +37,14 @@ To use Allim pipeline, user needs to meet these requirements.
   * Bioconductor package edgeR [http://www.bioconductor.org/packages/2.10/bioc/html/edgeR.html]
   * Bioconductor package limma [http://www.bioconductor.org/packages/release/bioc/html/limma.html]
 
-
-Note: To install R packages listed above 11-14, R >=2.15.0 should be installed.
-2.1 Operating system:
+   Note: To install R packages listed above 11-14, R >=2.15.0 should be installed.
+==2.1 Operating system==
 Allim package is designed to work with 64-bit Unix operating system with at least 4 GB or RAM and 2 CPUs (processors).
 
-2.2 Python:
+==2.2 Python==
 Allim is developed on Python version 2.7.3. Python 2.7.3 for your operating system could be obtained from http://www.python.org/download/. After download follow the instruction given on above web page to complete the python installation and configuration.
 
-2.3 Install Biopython:
+==2.3 Install Biopython==
 Allim requires bio python for efficient fasta sequence reading writing and other sequence manipulations.
 Once python is installed then bio python can be obtained and install with following steps:
 Step1: Download biopython source code from http://biopython.org/DIST/biopython-1.60.tar.gz
@@ -58,7 +57,7 @@ Step4: To install this python package run these two commands:
 	python setup.py build
 	python setup.py install
 
-2.4 Install PICARD:
+==2.4 Install PICARD==
 Picard comprises Java-based command-line utilities that manipulate SAM/BAM files. It is a collection of many JAVA jar files, which could be downloaded and used directly without any installation.
 
 Step1: Download latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
@@ -67,7 +66,7 @@ Step2: uncompress the downloaded file with following command:
 
 Allim pipeline used 3 jar files: 1) BuildBamIndex.jar, 2) MergeSamFiles.jar, 3) SortSam.jar, give full path of these three jar files in AllimOptions run file to run Allim pipeline.
 
-2.5 Install SAMTOOLS:
+==2.5 Install SAMTOOLS==
 SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
 
 Step1: Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
@@ -81,7 +80,7 @@ Step4: To make samtools executable run make command:
 	make
 After make command an executable called samtools will be created, give full path of samtools executable in AllimOptions run file to run Allim pipeline.
 
-2.6 Install BedTools:
+==2.6 Install bedtools==
 Step1: Download bedTools from http://bedtools.googlecode.com/files/BEDTools.v2.16.2.tar.gz
 Step2: Uncompress the downloaded file “BEDTools.v2.16.2.tar.gz” with following command:
 tar -xzvf BEDTools.v2.16.2.tar.gz
@@ -93,7 +92,7 @@ Step4: To make samtools executable run make all command:
 After “make all” command; BEDTools-Version-2.16.2/bin sub-folder/sub-directory will be created which contains all betTools executables.
 Allim pipeline used 3 executables: 1) intersectBed, 2) sortBed, 3) bamToBed, give full path of these three executables in AllimOptions run file to run Allim pipeline.
 
-2.7 Install GSNAP:
+==2.7 Install GSNAP==
 
 Step1: Download GSNAP source code from http://research-pub.gene.com/gmap/src/gmap-gsnap-2012-07-20.tar.gz
 Step2: Uncompress the downloaded file “gmap-gsnap-2012-07-20.tar.gz” with following command:
@@ -111,9 +110,9 @@ Step5: To check gsnap installations run this command:
 This command will return detail help manual about parameters.
 Note: For detail information how to build GSNAP please read gmap-2012-07-20/README file.
 
-2.8 Install R:
+==2.8 Install R==
 Operating system specific R source code can be obtained from http://cran.r-project.org/ and follow the instruction to install R.
-2.9 Install NumPy:
+==2.9 Install NumPy==
 NumPy is the fundamental package for scientific computing with Python. It is used for introducing sequencing error while simulating RNA-Seq reads in Allim pipeline. In order to install NumPy on any Unix system following steps required:
 Step1: Download NumPy package source code from http://sourceforge.net/projects/numpy/files/NumPy/1.6.0/
 
@@ -126,7 +125,7 @@ Step4: To install this python package run these two commands:
 	python setup.py build
 	python setup.py install
 
-2.10 Install RPy2:
+==2.10 Install RPy2==
 This is a python class designed to do R statistics programming in python. In order to install it on any Unix system following steps required:
 Step1: Download RPy2 package source code from http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/
 Step2: Uncompress the downloaded file with following command
@@ -138,22 +137,22 @@ Step4: To install this python package run these two commands:
 	python setup.py build
 	python setup.py install
 
-2.11 Install R package car:
+==2.11 Install R package car==
 Step1: Download R package car source code from http://cran.r-project.org/src/contrib/car_2.0-12.tar.gz
 Step2: Open terminal and run following command to install:
 R CMD INSTALL car_2.0-12.tar.gz
 
-2.12 Install R package multcop:
+==2.12 Install R package multcop==
 Step1: Download R package multcop source code from http://cran.r-project.org/src/contrib/multcomp_1.2-12.tar.gz
 Step2: Open terminal and run following command to install:
 R CMD INSTALL multcomp_1.2-12.tar.gz
 
-2.13 Install R package edgeR:
+==2.13 Install R package edgeR==
 Step1: Download R package edgeR source code from www.bioconductor.org/packages/2.3/bioc/src/contrib/edgeR_1.0.4.tar.gz
 Step2: Open terminal and run following command to install:
 R CMD INSTALL edgeR_1.0.4.tar.gz
 
-2.14 Install R package limma:
+==2.14 Install R package limma==
 Step1: Download R package limma source code from http://phase.hpcc.jp/mirrors/stat/R/CRAN/src/contrib/limma_2.0.2.tar.gz
 Step2: Open terminal and run following command to install:
 R CMD INSTALL limma_2.0.2.tar.gz
