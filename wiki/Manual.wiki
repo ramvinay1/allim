@@ -345,3 +345,12 @@ Further more validated Allim via simulations of RNA-Seq of both parental alleles
 ||Females||99.97||98.96||
 ||Males||99.96||98.60||
 ||Simulation||99.99||99.99||
+
+
+http://allim.googlecode.com/files/expr-ratio-boxplot.jpg
+
+http://allim.googlecode.com/files/female-expr.jpg
+
+http://allim.googlecode.com/files/male-expr.jpg
+
+http://allim.googlecode.com/files/simulated-expr.jpg
