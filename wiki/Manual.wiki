@@ -348,12 +348,22 @@ Further more validated Allim via simulations of RNA-Seq of both parental alleles
 
 
 
-==Expression of each gene in strainA and strainB plotted as given below. R^2=0.948; P < 2.2e-16;
+==Female data==
+Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.948; P-value < 2.2e-16;
 
 http://allim.googlecode.com/files/female-expr.jpg
 
+==Male data==
+Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.959; P-value < 2.2e-16;
+
 http://allim.googlecode.com/files/male-expr.jpg
+
+==Simulation data==
+Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.992; P-value < 2.2e-16;
 
 http://allim.googlecode.com/files/simulated-expr.jpg
 
+== Gene expression ratio==
+The expression ratio for each expressed gene is calculated as strainA/strainB for both data (Females and Males). In given boxplot the log10 ratio was given on y-axis.
+ 
 http://allim.googlecode.com/files/expr-ratio-boxplot.jpg
