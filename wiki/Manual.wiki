@@ -326,3 +326,5 @@ Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 *Table1: Benchmarks for processing time for each module of Allim*
 
 *Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
+
+=Validation=
