@@ -328,7 +328,7 @@ Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 *Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
 
 =Validation=
-We used RNA-Seq data from females and males of two different Drosophila pseudoobscura isofemale lines (Look *_Table2_*) and ran our Allim pipleline after pooling the reads from both libraries. In contrast to experiments measuring allelic imbalance, the origin of each read is known.Our results show that 99% of the informative reads are assigned to correct parental allele.
+We used RNA-Seq data from females and males of two different Drosophila pseudoobscura isofemale lines (*_Table2_*) and ran our Allim pipleline after pooling the reads from both libraries. In contrast to experiments measuring allelic imbalance, the origin of each read is known.Our results show that 99% (*_Table3_*) of the informative reads are assigned to correct parental allele.
 
 *Table2: RNA-Seq data used for validation*
 
@@ -338,7 +338,7 @@ We used RNA-Seq data from females and males of two different Drosophila pseudoob
 ||ps88 males||79.21||128||
 ||ps88 females||80.00||68||
 
-Further more validated Allim via simulations of RNA-Seq of both parental alleles (i.e.: 2x 100bp paired ends with 78bp insert size). For both genomes the same number of reads covering a polymorphic site were generated. Thus, in absence of a mapping bias, all genes should have an expression ratio of one for every gene. This result also shows about 99.99% (Look *_Table3_*) informative reads are assigned to correct parental allele. 
+Further more validated Allim via simulations of RNA-Seq of both parental alleles (i.e.: 2x 100bp paired ends with 78bp insert size). For both genomes the same number of reads covering a polymorphic site were generated. Thus, in absence of a mapping bias, all genes should have an expression ratio of one for every gene. This result also shows about 99.99% (*_Table3_*) informative reads are assigned to correct parental allele. 
 
 *Table3 Accuracy of Allim pipeline*
 ||Dataset||strainA (%)||strainB (%)||
