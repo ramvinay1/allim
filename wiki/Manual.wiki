@@ -348,6 +348,7 @@ Further more validated Allim via simulations of RNA-Seq of both parental alleles
 
 
 
+==Expression of each gene in strainA and strainB plotted as given below. R^2=0.948; P < 2.2e-16;
 
 http://allim.googlecode.com/files/female-expr.jpg
 
