@@ -1,10 +1,4 @@
-#This page gives information about Allim configuration file
-
-
-<wiki:toc max_depth="3" />
-
-
-#This page gives information about Allim configuration file.
+#summary This page gives information about Allim configuration file.
 
 
 <wiki:toc max_depth="3" />
