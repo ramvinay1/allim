@@ -1,4 +1,3 @@
-#labels configurationfile
 #This page gives information about Allim configuration file.
 
 
