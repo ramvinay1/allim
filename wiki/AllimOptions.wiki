@@ -5,7 +5,8 @@
 
 {{{
 
-####################################################################################################
+
+##############################################################################################################
 ## Allim Options file (AllimOptions.txt)
 ##
 ## This file sets the customizable options for running Allim. The options include the paths to the
@@ -19,7 +20,7 @@
 ##       2) Parameters in upper case letters have to be adjusted. The parameters can be changed
 ##          by replacing the values after the “=” sign.
 ##
-#############################################################################################
+##############################################################################################################
 
 
 
@@ -60,16 +61,15 @@ MINIMUM_MAPPING_QUALITY = 20
 QUALITY_ENCODING= illumina
 
 
-##################################################################################################
+##############################################################################################################
 #
 # Fixed SNP OPTIONS
 # Step1: Identification of fixed SNPs (fixed differences between parental strains)
 #        The fixed SNPs will later be used to estimate allele specific gene expression
 #        in simulated and experimental data. 
 #
-##################################################################################################
-
-## Provide the paths (relative to <Allim_1.0>) of the paired-end sequencing files of the parents and all present replicates.
+##############################################################################################################
+## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files of the parents and all present replicates.
 #
 ## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided in following format:
 # read1.fq,read2.fq,78
@@ -80,14 +80,17 @@ QUALITY_ENCODING= illumina
 
 # For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = test_data/female-fastq/parent1_read1.fastq,test_data/female-fastq/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = test_data/female-fastq/parent2_read1.fastq,test_data/female-fastq/parent2_read2.fastq,78
+REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = test_data/male-fastq/parent1_read1.fastq,test_data/male-fastq/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = test_data/male-fastq/parent2_read1.fastq,test_data/male-fastq/parent2_read2.fastq,78
+REPLICATE_PARENT1_FASTQ_FILE = 
+REPLICATE_PARENT2_FASTQ_FILE = 
 
+#### Replicate 2: parent1,parent2 and hybrid fastq file data
+REPLICATE_PARENT1_FASTQ_FILE = 
+REPLICATE_PARENT2_FASTQ_FILE = 
 
 # Provide parameters for the mapping with GSNAP and the identification of fixed SNPs.
 #
@@ -115,14 +118,14 @@ MINIMUM_COVERAGE = 2
 FIXED_ALLELE_FREQURNCY = 1.0
 
 
-##################################################################################################
+##############################################################################################################
 #
 # Simulation OPTIONS
 # Step2: Simulating RNA-Seq paired-end reads for the whole transcriptome. 
 #        This simulation data will be used to estimate the residual mapping bias after -
 #        the generation of a polymorphism aware reference genome. 
 #
-##################################################################################################
+##############################################################################################################
 
 # Give the ASCII letter, which will be assigned to each nucleotide of simulated read in FASTQ file.
 # Example: ASCII_QUALITY_LETTER=e for illumina encoding; or ASCII_QUALITY_LETTER=H for sanger encoding.
@@ -143,12 +146,12 @@ INSERT_SIZE = 78
 
 
 
-##################################################################################################
+##############################################################################################################
 #
 # ASE OPTIONS
 # Step3: Measuring Allele-specific expression (ASE) with simulated as well as experimental data 
 #
-##################################################################################################
+##############################################################################################################
 
 ## Provide the paths (relative to <Allim_1.0>) of the paired-end sequencing files-
 #  of the two parents (parent1, parent2) and the hybrid (F1) for all present replicates.
@@ -163,43 +166,51 @@ INSERT_SIZE = 78
 #
 # For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = test_data/female-fastq/parent1_read1.fastq,test_data/female-fastq/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = test_data/female-fastq/parent2_read1.fastq,test_data/female-fastq/parent2_read2.fastq,78
-REPLICATE_HYBRID_FASTQ_FILE = test_data/female-fastq/hybrid_read1.fastq,test_data/female-fastq/hybrid_read2.fastq,98
+REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
+REPLICATE_HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,98
 #
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = test_data/male-fastq/parent1_read1.fastq,test_data/male-fastq/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = test_data/male-fastq/parent2_read1.fastq,test_data/male-fastq/parent2_read2.fastq,78
-REPLICATE_HYBRID_FASTQ_FILE = test_data/male-fastq/hybrid_read1.fastq,test_data/male-fastq/hybrid_read2.fastq,98
+REPLICATE_PARENT1_FASTQ_FILE = 
+REPLICATE_PARENT2_FASTQ_FILE = 
+REPLICATE_HYBRID_FASTQ_FILE = 
 
+#
+#### Replicate 3: parent1,parent2 and hybrid fastq file data
+REPLICATE_PARENT1_FASTQ_FILE = 
+REPLICATE_PARENT2_FASTQ_FILE = 
+REPLICATE_HYBRID_FASTQ_FILE = 
 
-
-##################################################################################################
+##############################################################################################################
 #
 # Third party software/tool executables
 # Provide the full path to the third party executables to run the Allim pipeline.
 #  
 #
-##################################################################################################
+##############################################################################################################
 
 
 ### Get samtools to manipulate SAM and BAM files from http://samtools.sourceforge.net/
 # Provide the full path of the executables relative to the <Allim_1.0>
-SAMTOOLS = executables/samtools
+SAMTOOLS = /Allim_1.0/executables/samtools
 
 
 ### Get intersectBed executables from a collection of useful utilities called bedtools from http://code.google.com/p/bedtools/
 # Provide the full paths of the executables relative to the <Allim_1.0>
-INTERSECTBED = executables/intersectBed
-SORTBED = executables/sortBed
-BAMTOBED = executables/bamToBed
+INTERSECTBED = /Allim_1.0/executables/intersectBed
+SORTBED = /Allim_1.0/executables/sortBed
+BAMTOBED = /Allim_1.0/executables/bamToBed
 
 
 #### Three PICARD JAR files from http://picard.sourceforge.net/index.shtml
 # Provide the full paths of the executables relative to the <Allim_1.0>
-SORTSAM = executables/SortSam.jar
-MERGESAMFILES = executables/MergeSamFiles.jar
-BUILDBAMINDEX = executables/BuildBamIndex.jar
+SORTSAM = /Allim_1.0/executables/SortSam.jar
+MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
+BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
+
+
+
+
 
 
 
