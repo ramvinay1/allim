@@ -1,8 +1,4 @@
-#This page gives information about Allim configuration file.
+This page gives information about Allim configuration file.
 
 
 <wiki:toc max_depth="3" />
-
-=1. Introduction=
-Allim: Allelic imbalance meter offers an integrated and user-friendly solution for measuring allele specific gene expression within species.
-We have developed Allim:
