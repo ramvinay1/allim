@@ -6,7 +6,7 @@
 =Introduction==
 Allim pipeline can be run one of multiple replicates RNA-seq data. In order to use Allim user has to modify the AllimOption configuration file. This file allows user to define all input files and other parameters once and whole pipeline will be running without more interactions.
 
-This configuration file can be downloaded from [allim.googlecode.com/files/AllimOptions AllimOptions]
+This configuration file can be downloaded from [http://allim.googlecode.com/files/AllimOptions *AllimOptions*]
 
 {{{
 
