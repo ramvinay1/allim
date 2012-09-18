@@ -4,16 +4,19 @@
 <wiki:toc max_depth="3" />
 
 =1. Introduction=
-Allim: Allelic imbalance meter offers an integrated and user-friendly solution for measuring allele specific gene expression within species.
-We have developed Allim: a user-friendly pipeline to estimate allelic imbalance in F1 hybrids. Since mapping bias is the largest problem for reliable estimates of allele specific gene expression using RNA-Seq, Allim combines two different measures to account for mapping biases. First, Allim generates a polymorphism aware reference genome that accounts for the sequence variation between the alleles. Second, Allim includes a sequence specific simulation tool to estimate the remaining mapping bias. This estimated mapping bias is then incorporated in the statistical tests for allelic imbalance.
-The pipeline requires whole transcript RNA sequencing (RNA-seq) reads from both parents and the F1 hybrid provided in separate files. Allim was tested on Illumina paired-end RNA-seq reads but it can also handle FASTQ files from other NGS sequencing platforms. The provided parental RNA-seq libraries can be from homozygous parents.
-Allim has five modules that can be run by a single command, without much hassle. User can edit AllimOption.txt file once and run the whole pipeline.
+=Introduction=
+Allim, Allelic imbalance meter, offers an integrated and user-friendly solution for measuring allele specific gene expression (ASE) within species. Allim estimates allelic imbalance in F1 hybrids. Since mapping bias is the largest problem for reliable estimates of allele specific gene expression using RNA-seq, Allim combines two different measures to account for mapping biases. First, Allim generates a polymorphism aware reference genome that accounts for the sequence variation between the alleles of both parents (or parental lines). Second, Allim includes a sequence specific simulation tool to estimate the remaining mapping bias. This estimated mapping bias is then incorporated in the statistical tests for allelic imbalance.
 
-Five Modules of Allim:
-  * Finding fixed SNP
-  * Computer simulation of RNA-Seq reads
-  * Estimating Allele Specific Expression with experimental data
-  * Estimating Allele Specific Expression with simulated data
+The pipeline requires whole transcript RNA sequencing (RNA-seq) reads from both parents and the F1 hybrid provided in separate files. Allim was tested on Illumina paired-end RNA-seq reads but it can also handle FASTQ files from other NGS sequencing platforms. The provided parental RNA-seq libraries can be from homozygous as well as heterozygous parents (however, all heterozygous loci will be excluded during the analysis).
+Allim has five modules that can be run by a single command. All input parameters can be specified in the *AllimOptions* file once. These parameters are then used to run the complete pipeline.
+
+
+== Five Modules of Allim ==
+
+  * Identification of fixed SNPs
+  * Computer simulation of RNA-seq reads with fixed SNPs
+  * Estimation of the remaining mapping bias with simulated data
+  * Estimation of allele specific expression for experimental data
   * Statistical test of significant allelic imbalance
 
 The source code and the user manual of Allim are available from http://code.google.com/p/allim/
