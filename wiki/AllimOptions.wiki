@@ -92,7 +92,6 @@ QUALITY_ENCODING= illumina
 REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
 REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
-
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
 REPLICATE_PARENT1_FASTQ_FILE = 
 REPLICATE_PARENT2_FASTQ_FILE = 
@@ -110,7 +109,6 @@ REPLICATE_PARENT2_FASTQ_FILE =
 # The following parameter allows to specify the number of iterations that is done to call the final fixed SNPs
 # for the subsequent analysis. (The minimum number is 2.) 
 CALCULATE_FIXED_SNP_ITERATION = 2
-
 
 # Give the minimum coverage required to call a fixed SNP.
 # This means that at least X mapped reads from each parent have to map to the respective nucleotide
