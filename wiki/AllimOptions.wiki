@@ -204,7 +204,8 @@ REPLICATE_HYBRID_FASTQ_FILE =
 SAMTOOLS = /Allim_1.0/executables/samtools
 
 
-### Get intersectBed executables from a collection of useful utilities called bedtools from http://code.google.com/p/bedtools/
+### Get intersectBed executables from a collection of useful utilities-
+#   called bedtools from http://code.google.com/p/bedtools/
 # Provide the full paths of the executables relative to the <Allim_1.0>
 INTERSECTBED = /Allim_1.0/executables/intersectBed
 SORTBED = /Allim_1.0/executables/sortBed
