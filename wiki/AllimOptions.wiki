@@ -75,11 +75,14 @@ QUALITY_ENCODING= illumina
 #        in simulated and experimental data. 
 #
 ##############################################################################################################
-## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files of the parents and all present replicates.
+## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files-
+#  of the parents and all present replicates.
 #
-## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided in following format:
+## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided-
+#  in following format:
 # read1.fq,read2.fq,78
-# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq contains all corresponding “read 2” reads.
+# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq-
+#  contains all corresponding “read 2” reads.
 # 78 is the insert. Make sure that the order of the paired end reads is identical in both fastq files.
 
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
