@@ -11,6 +11,7 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 {{{
 
 
+
 ##############################################################################################################
 ## Allim Options file (AllimOptions.txt)
 ##
@@ -31,19 +32,19 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 
 # Output directory: the name of the directory can be changed.
 # The directory will be generated in <Allim_1.0> 
-OUTPUT_DIRECTORY = test_output
+OUTPUT_DIRECTORY = /Allim_1.0/test_output
 
 ## Give the number of replicates your data consists of. 
 REPLICATE_COUNT=2
 
 # Give the path to the fasta file of the genomic reference. 
-REFERENCEE_FASTA = test_data/reference.fa
+REFERENCEE_FASTA = /Allim_1.0/test_data/reference.fa
 
 # Give the gene annotation file of your genomic reference in GTF format.
-REFERENCE_GTF_FILE = test_data/reference.gtf
+REFERENCE_GTF_FILE = /Allim_1.0/test_data/reference.gtf
 
 # Give the number of processors that should be used for read mapping.
-THREAD = 4
+THREAD = 15
 
 
 # Give the minimum base quality required to call a fixed SNP and to use a nucleotide position for
@@ -78,7 +79,7 @@ QUALITY_ENCODING= illumina
 #
 ## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided in following format:
 # read1.fq,read2.fq,78
-# The read1.fq file contains all “read 1” of the paired end reads. read2.fq contains all corresponding “read 2”.
+# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq contains all corresponding “read 2” reads.
 # 78 is the insert. Make sure that the order of the paired end reads is identical in both fastq files.
 
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
@@ -99,7 +100,7 @@ REPLICATE_PARENT2_FASTQ_FILE =
 
 # Provide parameters for the mapping with GSNAP and the identification of fixed SNPs.
 #
-# Fixed between both parents are called based on the mapping of the reads from both parents.
+# Fixed SNPsbetween both parents are called based on the mapping of the reads from both parents.
 # However, the mapping with GSNAP can be improved by integrating the fixed SNP information
 # to remap the sequence reads of the parents.
 
@@ -136,7 +137,7 @@ FIXED_ALLELE_FREQURNCY = 1.0
 # Example: ASCII_QUALITY_LETTER=e for illumina encoding; or ASCII_QUALITY_LETTER=H for sanger encoding.
 # For illumina encoding the ASCII QUALITY letters UVWXYZ[\]^_`abcdefgh encode for base qualities from 20-40.
 # For sanger encoding the ASCII QUALITY letters 6789:;<=>?@ABCDEFGHI encode for base qualities from 20-40.
-# Give a single ASCII letter, which will be assigned for each nucleotide of simulated read.
+# Give a single ASCII letter, which will be assigned for each nucleotide in the simulated read.
 ASCII_QUALITY_LETTER = e
 
 # Provide the read length of the simulated reads. For example: READ_LENGTH=100 to simulate 100 bp reads.
@@ -212,6 +213,11 @@ BAMTOBED = /Allim_1.0/executables/bamToBed
 SORTSAM = /Allim_1.0/executables/SortSam.jar
 MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
 BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
+
+
+
+
+
 
 
 
