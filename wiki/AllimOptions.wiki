@@ -218,20 +218,4 @@ SORTSAM = /Allim_1.0/executables/SortSam.jar
 MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
 BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }}}
