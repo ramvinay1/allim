@@ -90,16 +90,16 @@ QUALITY_ENCODING= illumina
 
 # For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
+PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = 
-REPLICATE_PARENT2_FASTQ_FILE = 
+PARENT1_FASTQ_FILE = 
+PARENT2_FASTQ_FILE = 
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = 
-REPLICATE_PARENT2_FASTQ_FILE = 
+PARENT1_FASTQ_FILE = 
+PARENT2_FASTQ_FILE = 
 
 # Provide parameters for the mapping with GSNAP and the identification of fixed SNPs.
 #
@@ -174,20 +174,20 @@ INSERT_SIZE = 78
 #
 # For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
-REPLICATE_HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,98
+PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
+HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,98
 #
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = 
-REPLICATE_PARENT2_FASTQ_FILE = 
-REPLICATE_HYBRID_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE = 
+#PARENT2_FASTQ_FILE = 
+#HYBRID_FASTQ_FILE = 
 
 #
 #### Replicate 3: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = 
-REPLICATE_PARENT2_FASTQ_FILE = 
-REPLICATE_HYBRID_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE = 
+#PARENT2_FASTQ_FILE = 
+#HYBRID_FASTQ_FILE = 
 
 ##############################################################################################################
 #
