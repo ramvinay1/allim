@@ -115,14 +115,14 @@ INSERT_SIZE = 78
 #
 # For each replicate provide 1 file called hybrid (F1)
 #### Replicate 1: F1 (hybrid) fastq file data
-REPLICATE_HYBRID_FASTQ_FILE = /Allim_1.0/test_data/r1_hybrid_read1.fastq,/Allim_1.0/test_data/r1_hybrid_read2.fastq,128
+HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,128
 #
 #### Replicate 2: F1 (hybrid) fastq file data
-REPLICATE_HYBRID_FASTQ_FILE = /Allim_1.0/test_data/r2_hybrid_read1.fastq,/Allim_1.0/test_data/r2_hybrid_read2.fastq,98
+#HYBRID_FASTQ_FILE =
 
 #
 #### Replicate 3: F1 (hybrid) fastq file data
-#REPLICATE_HYBRID_FASTQ_FILE = 
+#HYBRID_FASTQ_FILE = 
 
 ##############################################################################################################
 #
