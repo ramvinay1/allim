@@ -37,7 +37,8 @@ OUTPUT_DIRECTORY = /Allim_1.0/test_output_2Pgenomes
 ## Give the number of replicates your data consists of. 
 REPLICATE_COUNT=2
 
-# Give the path to the fasta files for two parents private genomes. The lenght of both genome and FASTA Sequence ID should be exactly same.
+# Give the path to the fasta files for two parents private genomes.
+# The length of both genome and FASTA Sequence ID should be exactly same.
 # That means both genomes will be different ony by fixed alleles.
 PARENT1_REFERENCEE_FASTA = /Allim_1.0/test_data/parent1_genome.fa
 PARENT2_REFERENCEE_FASTA = /Allim_1.0/test_data/parent2_genome.fa
