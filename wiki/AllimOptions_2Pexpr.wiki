@@ -94,12 +94,12 @@ PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_da
 PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-PARENT1_FASTQ_FILE = 
-PARENT2_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE = 
+#PARENT2_FASTQ_FILE = 
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-PARENT1_FASTQ_FILE = 
-PARENT2_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE = 
+#PARENT2_FASTQ_FILE = 
 
 # Provide parameters for the mapping with GSNAP and the identification of fixed SNPs.
 #
