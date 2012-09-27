@@ -10,8 +10,6 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 
 
 {{{
-
-
 ##############################################################################################################
 ## Allim Options file (AllimOptions_2Pexpr.txt)
 ##
@@ -88,8 +86,8 @@ QUALITY_ENCODING= illumina
 
 # For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data_2Pexpr/parent1_read2.fastq,68
-REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data_2Pexpr/parent2_read2.fastq,78
+REPLICATE_PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+REPLICATE_PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
 
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
@@ -203,7 +201,8 @@ REPLICATE_HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0
 SAMTOOLS = /Allim_1.0/executables/samtools
 
 
-### Get intersectBed executables from a collection of useful utilities called bedtools from http://code.google.com/p/bedtools/
+### Get intersectBed executables from a collection of useful utilities called bedtools-
+### from http://code.google.com/p/bedtools/
 # Provide the full paths of the executables relative to the <Allim_1.0>
 INTERSECTBED = /Allim_1.0/executables/intersectBed
 SORTBED = /Allim_1.0/executables/sortBed
@@ -215,5 +214,6 @@ BAMTOBED = /Allim_1.0/executables/bamToBed
 SORTSAM = /Allim_1.0/executables/SortSam.jar
 MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
 BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
+
 
 }}}
