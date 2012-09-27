@@ -1,0 +1,9 @@
+#summary This page gives information about Allim configuration file in the situation when user have parent1, parent2 and F1 (hybrid) RNA-seq data for one or multiple replicates.
+
+
+<wiki:toc max_depth="3" />
+
+=Introduction==
+Allim pipeline can be run one of multiple replicates RNA-seq data. In order to use Allim user has to modify the *AllimOptions_2Pgenomes* configuration file. This file allows user to define all input files and other parameters once and whole pipeline will be running without more interactions. This option is especially useful when user have RNA-seq data for parent1, parent2 and F1 (hybrid).
+
+This configuration file can be downloaded from [http://allim.googlecode.com/files/AllimOptions_2Pexpr AllimOptions_2Pexpr]
