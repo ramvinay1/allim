@@ -1,4 +1,4 @@
-#summary This page gives information about Allim configuration file in the situation when user has only F1 (hybrid) RNA-seq data for one or multiple replicates.
+#summary This page gives information about Allim configuration file in the situation when user have only F1 (hybrid) RNA-seq data for one or multiple replicates.
 
 
 <wiki:toc max_depth="3" />
