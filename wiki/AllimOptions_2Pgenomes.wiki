@@ -1,9 +1,9 @@
-#summary This page gives information about Allim configuration file in the situation when user has only F1 (hybrid) RNA-seq data for one or multiple replicates. In this case user has to provide two parents genome fasta files seperately
+#summary This page gives information about Allim configuration file in the situation when user has only F1 (hybrid) RNA-seq data for one or multiple replicates.
 
 
 <wiki:toc max_depth="3" />
 
 =Introduction==
-Allim pipeline can be run one of multiple replicates RNA-seq data. In order to use Allim user has to modify the *AllimOptions* configuration file. This file allows user to define all input files and other parameters once and whole pipeline will be running without more interactions.
+Allim pipeline can be run one of multiple replicates RNA-seq data. In order to use Allim user has to modify the *AllimOptions_2Pgenomes* configuration file. This file allows user to define all input files and other parameters once and whole pipeline will be running without more interactions. This option is especially useful when user does not have RNA-seq data for parent1 and parent2 but only for F1 (hybrid), in this case user has to provide two parents genome fasta files separately. User has to make sure that both parents fasta sequence should be of same length and the fasta ID should be identical in both fasta files.
 
 This configuration file can be downloaded from [http://allim.googlecode.com/files/AllimOptions_2Pgenomes AllimOptions_2Pgenomes]
