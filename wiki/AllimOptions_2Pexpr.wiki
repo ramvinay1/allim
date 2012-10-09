@@ -194,7 +194,8 @@ INSERT_SIZE = 78
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
 #
 # For each replicate provide 3 RNA-seq files 1) parent1; 2) parent2; and 3) hybrid (F1)
-# In case no RNA-seq data for the parents is available, PARENT1_FASTQ_FILE_EXPR and PARENT2_FASTQ_FILE_EXPR should be empty.
+# In case no RNA-seq data for the parents is available,
+# PARENT1_FASTQ_FILE_EXPR and PARENT2_FASTQ_FILE_EXPR should be empty.
 
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
 PARENT1_FASTQ_FILE_EXPR = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
@@ -239,4 +240,5 @@ BAMTOBED = /Allim_1.0/executables/bamToBed
 SORTSAM = /Allim_1.0/executables/SortSam.jar
 MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
 BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
+
 }}}
