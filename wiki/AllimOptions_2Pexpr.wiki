@@ -32,7 +32,7 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 
 # Output directory: the name of the directory can be changed.
 # The directory will be generated in <Allim_1.0> 
-OUTPUT_DIRECTORY = /Allim_1.0/test_output_2Pexpr_02-10-2012_mRNA
+OUTPUT_DIRECTORY = /Allim_1.0/test_output
 
 ## Give the number of replicates your data consists of. 
 REPLICATE_COUNT=1
@@ -80,15 +80,17 @@ QUALITY_ENCODING= illumina
 #### with DNA sequencing FASTQ files from parent1 and parent2. For Fixed SNP identification
 #### user can specify the Sequence type: SEQUENCE_TYPE=mRNA or SEQUENCE_TYPE=DNA
 #### It is case sensitive to give exact word mRNA or DNA
-
 SEQUENCE_TYPE=mRNA
 
 
-## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files of the parents and all present replicates.
+## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files
+## of the parents and all present replicates.
 #
-## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided in following format:
+## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be
+## provided in following format:
 # read1.fq,read2.fq,78
-# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq contains all corresponding “read 2” reads.
+# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq contains
+# all corresponding “read 2” reads.
 # 78 is the insert. Make sure that the order of the paired end reads is identical in both fastq files.
 
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
