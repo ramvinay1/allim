@@ -12,8 +12,7 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 ##############################################################################################################
 ## Allim Options file (AllimOptions_2Pgenomes.txt)
 ##
-## Note: This configuration file is used when user has only F1 RNA-seq data-
-##       and two private genomes for parent1 and parent2
+## Note: This configuration file is used when user has only F1 expression data and two private genomes for parent1 and parent2
 ##
 ## This file sets the customizable options for running Allim. The options include the paths to the
 ## sequencing data, paths to executables and other parameters of the pipeline e.g. mapping parameters.
@@ -37,11 +36,10 @@ OUTPUT_DIRECTORY = /Allim_1.0/test_output_2Pgenomes
 ## Give the number of replicates your data consists of. 
 REPLICATE_COUNT=2
 
-# Give the path to the fasta files for two parents private genomes.
-# The length of both genome and FASTA Sequence ID should be exactly same.
+# Give the path to the fasta files for two parents private genomes. The lenght of both genome and FASTA Sequence ID should be exactly same.
 # That means both genomes will be different ony by fixed alleles.
-PARENT1_REFERENCEE_FASTA = /Allim_1.0/test_data/parent1_genome.fa
-PARENT2_REFERENCEE_FASTA = /Allim_1.0/test_data/parent2_genome.fa
+PARENT1_REFERENCEE_FASTA = /Allim_1.0/test_data_2Pgenomes/parent1_genome.fa
+PARENT2_REFERENCEE_FASTA = /Allim_1.0/test_data_2Pgenomes/parent2_genome.fa
 
 # Give the gene annotation file of your genomic reference in GTF format.
 REFERENCE_GTF_FILE = /Allim_1.0/test_data/reference.gtf
@@ -115,14 +113,14 @@ INSERT_SIZE = 78
 #
 # For each replicate provide 1 file called hybrid (F1)
 #### Replicate 1: F1 (hybrid) fastq file data
-HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,128
+HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data_2Pgenomes/r1_hybrid_read1.fastq,/Allim_1.0/test_data_2Pgenomes/r1_hybrid_read2.fastq,128
 #
 #### Replicate 2: F1 (hybrid) fastq file data
-#HYBRID_FASTQ_FILE =
+HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data_2Pgenomes/r2_hybrid_read1.fastq,/Allim_1.0/test_data_2Pgenomes/r2_hybrid_read2.fastq,98
 
 #
 #### Replicate 3: F1 (hybrid) fastq file data
-#HYBRID_FASTQ_FILE = 
+#HYBRID_FASTQ_FILE_EXPR = 
 
 ##############################################################################################################
 #
@@ -138,8 +136,7 @@ HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data
 SAMTOOLS = /Allim_1.0/executables/samtools
 
 
-### Get intersectBed executables from a collection of useful utilities-
-### called bedtools from http://code.google.com/p/bedtools/
+### Get intersectBed executables from a collection of useful utilities called bedtools from http://code.google.com/p/bedtools/
 # Provide the full paths of the executables relative to the <Allim_1.0>
 INTERSECTBED = /Allim_1.0/executables/intersectBed
 SORTBED = /Allim_1.0/executables/sortBed
