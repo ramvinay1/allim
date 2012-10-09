@@ -12,7 +12,8 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 ##############################################################################################################
 ## Allim Options file (AllimOptions_2Pgenomes.txt)
 ##
-## Note: This configuration file is used when user has only F1 expression data and two private genomes for parent1 and parent2
+## Note: This configuration file is used when user has only F1 expression data
+##       and two private genomes for parent1 and parent2
 ##
 ## This file sets the customizable options for running Allim. The options include the paths to the
 ## sequencing data, paths to executables and other parameters of the pipeline e.g. mapping parameters.
