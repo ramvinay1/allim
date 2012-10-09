@@ -15,7 +15,6 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 ##
 ## Note: This configuration file is used when user has expression data for parent1, parent2 and F1.
 ##
-
 ## This file sets the customizable options for running Allim. The options include the paths to the
 ## sequencing data, paths to executables and other parameters of the pipeline e.g. mapping parameters.
 ## This file contains example parameter settings, which can be used to run the test data set
@@ -33,10 +32,10 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 
 # Output directory: the name of the directory can be changed.
 # The directory will be generated in <Allim_1.0> 
-OUTPUT_DIRECTORY = /Allim_1.0/test_output
+OUTPUT_DIRECTORY = /Allim_1.0/test_output_2Pexpr_02-10-2012_mRNA
 
 ## Give the number of replicates your data consists of. 
-REPLICATE_COUNT=2
+REPLICATE_COUNT=1
 
 # Give the path to the fasta file of the genomic reference. 
 REFERENCEE_FASTA = /Allim_1.0/test_data/reference.fa
@@ -46,7 +45,6 @@ REFERENCE_GTF_FILE = /Allim_1.0/test_data/reference.gtf
 
 # Give the number of processors that should be used for read mapping.
 THREAD = 15
-
 
 # Give the minimum base quality required to call a fixed SNP and to use a nucleotide position for
 # the assessment of allele specific expression profiles. The base quality ranges between 0-40.
@@ -68,6 +66,7 @@ MINIMUM_MAPPING_QUALITY = 20
 QUALITY_ENCODING= illumina
 
 
+
 ##############################################################################################################
 #
 # Fixed SNP OPTIONS
@@ -76,14 +75,20 @@ QUALITY_ENCODING= illumina
 #        in simulated and experimental data. 
 #
 ##############################################################################################################
-## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files-
-#  of the parents and all present replicates.
+
+#### Give the sequencing type. Allim can calculate fixed SNP either with RNA-Seq FASTQ files OR
+#### with DNA sequencing FASTQ files from parent1 and parent2. For Fixed SNP identification
+#### user can specify the Sequence type: SEQUENCE_TYPE=mRNA or SEQUENCE_TYPE=DNA
+#### It is case sensitive to give exact word mRNA or DNA
+
+SEQUENCE_TYPE=mRNA
+
+
+## Provide the full paths (relative to <Allim_1.0>) of the paired-end sequencing files of the parents and all present replicates.
 #
-## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided-
-#  in following format:
+## Paired-end sequencing files and insert size (fragment size - 2(read length)) should be provided in following format:
 # read1.fq,read2.fq,78
-# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq-
-#  contains all corresponding “read 2” reads.
+# The read1.fq file contains all “read 1” reads of the paired end reads. read2.fq contains all corresponding “read 2” reads.
 # 78 is the insert. Make sure that the order of the paired end reads is identical in both fastq files.
 
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
@@ -93,6 +98,7 @@ QUALITY_ENCODING= illumina
 PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
 PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
 
+
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
 #PARENT1_FASTQ_FILE = 
 #PARENT2_FASTQ_FILE = 
@@ -100,6 +106,7 @@ PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_da
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
 #PARENT1_FASTQ_FILE = 
 #PARENT2_FASTQ_FILE = 
+
 
 # Provide parameters for the mapping with GSNAP and the identification of fixed SNPs.
 #
@@ -110,6 +117,7 @@ PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_da
 # The following parameter allows to specify the number of iterations that is done to call the final fixed SNPs
 # for the subsequent analysis. (The minimum number is 2.) 
 CALCULATE_FIXED_SNP_ITERATION = 2
+
 
 # Give the minimum coverage required to call a fixed SNP.
 # This means that at least X mapped reads from each parent have to map to the respective nucleotide
@@ -124,6 +132,12 @@ MINIMUM_COVERAGE = 2
 # higher frequency: lower throughput, higher accuracy
 # lower frequency: higher throughput, lower accuracy
 FIXED_ALLELE_FREQURNCY = 1.0
+
+
+
+
+
+
 
 
 ##############################################################################################################
@@ -154,6 +168,11 @@ INSERT_SIZE = 78
 
 
 
+
+
+
+
+
 ##############################################################################################################
 #
 # ASE OPTIONS
@@ -172,22 +191,24 @@ INSERT_SIZE = 78
 # end reads is identical in both fastq files.
 # The insert size is an optional parameter. Fastq files for both paired-end reads are mandatory.
 #
-# For each replicate provide 3 files 1) parent1; 2) parent2; and 3) hybrid (F1)
+# For each replicate provide 3 RNA-seq files 1) parent1; 2) parent2; and 3) hybrid (F1)
+# In case no RNA-seq data for the parents is available, PARENT1_FASTQ_FILE_EXPR and PARENT2_FASTQ_FILE_EXPR should be empty.
+
 #### Replicate 1: parent1,parent2 and hybrid fastq file data
-PARENT1_FASTQ_FILE = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
-PARENT2_FASTQ_FILE = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
-HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,98
+PARENT1_FASTQ_FILE_EXPR = /Allim_1.0/test_data/parent1_read1.fastq,/Allim_1.0/test_data/parent1_read2.fastq,68
+PARENT2_FASTQ_FILE_EXPR = /Allim_1.0/test_data/parent2_read1.fastq,/Allim_1.0/test_data/parent2_read2.fastq,78
+HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,128
 #
 #### Replicate 2: parent1,parent2 and hybrid fastq file data
-#PARENT1_FASTQ_FILE = 
-#PARENT2_FASTQ_FILE = 
-#HYBRID_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE_EXPR = 
+#PARENT2_FASTQ_FILE_EXPR = 
+#HYBRID_FASTQ_FILE_EXPR = 
 
 #
 #### Replicate 3: parent1,parent2 and hybrid fastq file data
-#PARENT1_FASTQ_FILE = 
-#PARENT2_FASTQ_FILE = 
-#HYBRID_FASTQ_FILE = 
+#PARENT1_FASTQ_FILE_EXPR = 
+#PARENT2_FASTQ_FILE_EXPR = 
+#HYBRID_FASTQ_FILE_EXPR = 
 
 ##############################################################################################################
 #
@@ -203,8 +224,8 @@ HYBRID_FASTQ_FILE = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data
 SAMTOOLS = /Allim_1.0/executables/samtools
 
 
-### Get intersectBed executables from a collection of useful utilities-
-#   called bedtools from http://code.google.com/p/bedtools/
+### Get intersectBed executables from a collection of useful utilities called bedtools-
+### from http://code.google.com/p/bedtools/
 # Provide the full paths of the executables relative to the <Allim_1.0>
 INTERSECTBED = /Allim_1.0/executables/intersectBed
 SORTBED = /Allim_1.0/executables/sortBed
@@ -216,5 +237,4 @@ BAMTOBED = /Allim_1.0/executables/bamToBed
 SORTSAM = /Allim_1.0/executables/SortSam.jar
 MERGESAMFILES = /Allim_1.0/executables/MergeSamFiles.jar
 BUILDBAMINDEX = /Allim_1.0/executables/BuildBamIndex.jar
-
 }}}
