@@ -79,137 +79,13 @@ python setup.py install
 }}}
 
 
+==2.4 NumPy installation==
+NumPy is the fundamental package for scientific computing with Python. In the Allim pipeline NumPy is used to integrate sequencing errors during the simulation of RNA-seq reads. In order to install NumPy on any Unix system the following steps are required:
 
-==2.4 Install PICARD==
-Picard comprises Java-based command-line utilities that manipulate SAM/BAM files. It is a collection of many JAVA jar files, which could be downloaded and used directly without any installation.
-
-
-*Step1:* Download latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
-
-*Step2:* uncompress the downloaded file with following command:
-
-{{{
-unzip picard-tools-1.75.zip
-}}}
-
-Allim pipeline used 3 jar files: 1) BuildBamIndex.jar, 2) MergeSamFiles.jar, 3) SortSam.jar, give full path of these three jar files in AllimOptions run file to run Allim pipeline.
-
-==2.5 Install SAMTOOLS==
-SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
+*Step1:* Download the NumPy package source code from http://sourceforge.net/projects/numpy/files/NumPy/1.6.0/
 
 
-*Step1:* Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
-
-
-*Step2:* Uncompress the downloaded file samtools-0.1.18.tar.bz2 with following command:
-
-{{{
-tar -xvjf samtools-0.1.18.tar.bz2
-}}}
-
-This command will return the folder/directory samtools-0.1.18
-
-*Step3:* go in this uncompressed folder samtools-0.1.18 with following command:
-	
-{{{
-cd samtools-0.1.18
-}}}
-
-
-*Step4:* To make samtools executable run make command:
-	
-{{{
-make
-}}}
-
-After make command an executable called samtools will be created, give full path of samtools executable in AllimOptions run file to run Allim pipeline.
-
-
-
-==2.6 Install bedtools==
-
-*Step1:* Download bedTools from http://bedtools.googlecode.com/files/BEDTools.v2.16.2.tar.gz
-
-*Step2:* Uncompress the downloaded file “BEDTools.v2.16.2.tar.gz” with following command:
-
-{{{
-tar -xzvf BEDTools.v2.16.2.tar.gz
-}}}
-
-This command will return the folder/directory BEDTools-Version-2.16.2
-
-
-*Step3:* go in this uncompressed folder BEDTools-Version-2.16.2 with following command:
-	
-{{{
-cd BEDTools-Version-2.16.2
-}}}
-
-
-*Step4:* To make samtools executable run make all command:
-	
-{{{
-make all
-}}}
-
-After “make all” command; BEDTools-Version-2.16.2/bin sub-folder/sub-directory will be created which contains all betTools executables.
-Allim pipeline used 3 executables: 1) intersectBed, 2) sortBed, 3) bamToBed, give full path of these three executables in AllimOptions run file to run Allim pipeline.
-
-
-
-==2.7 Install GSNAP==
-
-
-*Step1:* Download GSNAP source code from http://research-pub.gene.com/gmap/src/gmap-gsnap-2012-07-20.tar.gz
-
-*Step2:* Uncompress the downloaded file “gmap-gsnap-2012-07-20.tar.gz” with following command:
-
-{{{
-tar -xzvf gmap-gsnap-2012-07-20.tar.gz
-}}}
-
-
-*Step3:* go in this uncompressed folder “gmap-2012-07-20” with following command:
-	
-{{{
-cd gmap-2012-07-20
-}}}
-
-
-*Step4:* To install this python package run these four commands:
-
-{{{
-./configure
-make
-make check   (optional)
-make install
-}}}
-
-These above four commands will build gsnap and other executables in “/usr/bin”
-
-*Step5:* To check gsnap installations run this command:
-	
-{{{
-gsnap –help
-}}}
-
-This command will return detail help manual about parameters.
-Note: For detail information visit GSNAP README file [http://research-pub.gene.com/gmap/src/README GSNAP README]
-
-
-
-==2.8 Install R==
-Operating system specific R source code can be obtained from http://cran.r-project.org/ and follow the instruction to install R.
-
-
-
-==2.9 Install NumPy==
-NumPy is the fundamental package for scientific computing with Python. It is used for introducing sequencing error while simulating RNA-Seq reads in Allim pipeline. In order to install NumPy on any Unix system following steps required:
-
-*Step1:* Download NumPy package source code from http://sourceforge.net/projects/numpy/files/NumPy/1.6.0/
-
-
-*Step2:* Uncompress the downloaded file with following command
+*Step2:* Uncompress the downloaded file with following command:
 	
 {{{
 tar –zxvf numpy-1.6.0.tar.gz
@@ -217,7 +93,7 @@ tar –zxvf numpy-1.6.0.tar.gz
 
 This command will return the folder/directory numpy-1.6.0
 
-*Step3:* go in this uncompressed folder with following command
+*Step3:* Enter the uncompressed folder with following command:
 	
 {{{
 cd numpy-1.6.0
@@ -233,13 +109,136 @@ python setup.py install
 
 
 
+==2.5 PICARD installation==
+Picard comprises Java-based command-line utilities that manipulate SAM/BAM files. It is a collection of many JAVA jar files, which can be downloaded and used directly without prior installation.
 
-==2.10 Install RPy2==
-This is a python class designed to do R statistics programming in python. In order to install it on any Unix system following steps required:
 
-*Step1:* Download RPy2 package source code from http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/
+*Step1:* Download the latest version of PICARD from http://sourceforge.net/projects/picard/files/picard-tools/1.75/
 
-*Step2:* Uncompress the downloaded file with following command
+*Step2:* Uncompress the downloaded file with the following command:
+
+{{{
+unzip picard-tools-1.75.zip
+}}}
+
+The Allim pipeline uses three jar files: 1) _BuildBamIndex.jar_, 2) _MergeSamFiles.jar_, 3) _SortSam.jar_. Provide the full paths of these three jar files in AllimOptions run file to run the Allim pipeline. 
+
+==2.6 SAMTOOLS installation==
+SAMTOOLS provide various utilities for the manipulation of alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format.
+
+
+*Step1:* Download latest SAMTOOLS source code from http://sourceforge.net/projects/samtools/files/samtools/
+
+
+*Step2:* Uncompress the downloaded file samtools-0.1.18.tar.bz2 with following command:
+
+{{{
+tar -xvjf samtools-0.1.18.tar.bz2
+}}}
+
+This command will return the folder/directory samtools-0.1.18
+
+*Step3:* Enter the uncompressed folder samtools-0.1.18 with following command:
+	
+{{{
+cd samtools-0.1.18
+}}}
+
+
+*Step4:* To make samtools executable run the make command:
+	
+{{{
+make
+}}}
+
+After running the make command an executable called samtools will be created. Provide the full path of the samtools executable in the AllimOptions run file to run the Allim pipeline.
+
+
+
+==2.7 BedTools installation==
+BedTools provide a set of functions to sort and intersect various genomic formats including bam files and files that contain genomic annotation such as gene position and SNP information.
+
+*Step1:* Download BedTools from http://bedtools.googlecode.com/files/BEDTools.v2.16.2.tar.gz
+
+*Step2:* Uncompress the downloaded file BEDTools.v2.16.2.tar.gz with the following command:
+
+{{{
+tar -xzvf BEDTools.v2.16.2.tar.gz
+}}}
+
+This command will return the folder/directory BEDTools-Version-2.16.2
+
+
+*Step3:* Enter the uncompressed folder BEDTools-Version-2.16.2 with following command:
+	
+{{{
+cd BEDTools-Version-2.16.2
+}}}
+
+
+*Step4:* To make BedTools executable run the make all command:
+	
+{{{
+make all
+}}}
+
+After running the “make all” command, BEDTools-Version-2.16.2/bin sub-folder/sub-directory will be created, which contains all BedTool executables.
+The Allim pipeline uses three executables: 1) _intersectBed_, 2) _sortBed_, 3) _bamToBed_. Provide the full paths of these three executables in the AllimOptions run file to run the Allim pipeline.
+
+
+
+
+==2.8 GSNAP installation==
+GSNAP (Genomic Short-read Nucleotide Alignment Program) is a mapper for RNA-seq data. It has the advantages that it can detect splicing events and is capable of SNP tolerant alignments (Wu & Nacu 2010).
+
+*Step1:* Download the GSNAP source code from http://research-pub.gene.com/gmap/src/gmap-gsnap-2012-07-20.tar.gz
+
+*Step2:* Uncompress the downloaded file “gmap-gsnap-2012-07-20.tar.gz” with following command:
+{{{
+tar -xzvf gmap-gsnap-2012-07-20.tar.gz
+}}}
+
+
+*Step3:* Enter the uncompressed folder “gmap-2012-07-20” with following command:
+	
+{{{
+cd gmap-2012-07-20
+}}}
+
+
+*Step4:* To install the gmap package run these four commands:
+
+{{{
+./configure
+make
+make check   (optional)
+make install
+}}}
+
+The above four commands will build GSNAP and other executables in “/usr/bin”
+
+*Step5:* To check the GSNAP installations run this command:
+	
+{{{
+gsnap –help
+}}}
+
+This command will return the detailed help manual for various GSNAP parameters if the installation was successful.
+
+*Note:* For more detailed information how to install GSNAP please read the gmap-2012-07-20/README file.
+
+
+
+==2.9 R installation==
+The R source code specific to your operating system can be obtained from http://cran.r-project.org/. To install R, please follow the instructions provided with R.
+
+
+==2.10 RPy2 installation==
+RPy2 is a python class designed to do statistics programming using R in python. In order to install RPy2 on any Unix system the following steps are required:
+
+*Step1:* Download the RPy2 package source code from http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/
+
+*Step2:* Uncompress the downloaded file with following command:
 	
 {{{
 tar –zxvf rpy2-2.2.2.tar.gz
@@ -247,14 +246,14 @@ tar –zxvf rpy2-2.2.2.tar.gz
 
 This command will return the folder/directory rpy2-2.2.2
 
-*Step3:* go in this uncompressed folder with following command
+*Step3:* Enter the uncompressed folder with following command:
 	
 {{{
 cd rpy2-2.2.2
 }}}
 
 
-*Step4:* To install this python package run these two commands:
+*Step4:* To install the RPy2 package run the following two commands:
 	
 {{{
 python setup.py build
