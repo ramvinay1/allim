@@ -532,13 +532,19 @@ We have run the Allim pipeline with the following data set of RNA-seq reads from
 
 
 *RNA-seq reads (Illumina, GA II):*
+
 Parent1 reads: 2 million 100 bp paired-end reads with 68 bp average insert size.
+
 Parent2 reads: 2 million 100 bp paired-end reads with 78 bp average insert size.
+
 F1 reads: 2 million 100 bp paired-end reads with 98 bp average insert size
 
 
+
 *The Allim run simulated the following amount of sequence reads:*
+
 Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
+
 Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 
 
@@ -563,13 +569,13 @@ We validated the performance of our pipeline with experimental as well as simula
 
 
 
-*Table2: RNA-Seq data used for validation*
+*Table 6: Number of paired-end RNA-seq reads of D. pseudoobscura, which were used for validation. (ps88 and ps94 stand for two different isofemale lines.)*
 
-||Samples||Reads (in million)||Insert Size (bp)||
-||ps94 males||79.21||78||
-||ps94 females||80.00||78||
-||ps88 males||79.21||128||
-||ps88 females||80.00||68||
+||Samples||Reads (in million)||Insert Size (bp)||Read length (bp)||
+||ps88 males||79.21||78||100||
+||ps88 females||80.00||78||100||
+||ps94 males||79.21||128||100||
+||ps94 females||80.00||68||100||
 
 Further more validated Allim via simulations of RNA-Seq of both parental alleles (i.e.: 2x 100bp paired ends with 78bp insert size). For both genomes the same number of reads covering a polymorphic site were generated. Thus, in absence of a mapping bias, all genes should have an expression ratio of one for every gene. This result also shows about 99.99% (*_Table3_*) informative reads are assigned to correct parental allele. 
 
