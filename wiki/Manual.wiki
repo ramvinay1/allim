@@ -342,6 +342,26 @@ To validate the installation of the Allim pipeline it can be run with a small te
 
 
 
+*Note:* You either need to use the parental RNA-seq or the parental genomic data. The option you choose depends on the type of input data you have for your own analysis.
+
+Create a folder named *“test_data”* in the Allim_1.0 directory and download all the above test data files into this folder, unzip and extract the compressed files. Move the *AllimOptions_2Pexpr*  and *AllimOptions_2Pgenomes* files into the directory *Allim_1.0* directly. The Allim pipeline can then be run on the test data set with the following two steps:
+
+
+*1.* Open the terminal and enter the Allim_1.0 directory.
+cd Allim_1.0
+
+*2.* Run the Allim pipeline with the test data set via the following command (the type of the AllimOptions file that is used depends on the type of your input data):
+{{{
+python 01-allim.py --option-file AllimOptions_2Pexpr
+OR
+python 01-allim.py --option-file AllimOptions_2Pgenomes
+}}}
+
+To get help on how to run Allim and required parameters enter: 
+{{{
+	python 01-allim.py –help
+}}}
+
 
 
 =Benchmark for Allim pipeline=
