@@ -4,7 +4,7 @@
 <wiki:toc max_depth="3" />
 
 
-=Introduction=
+=1. Introduction=
 Allim, Allelic imbalance meter, offers an integrated and user-friendly solution for measuring allele specific gene expression (ASE) within species. Allim estimates allelic imbalance in F1 hybrids. Since mapping bias is the largest problem for reliable estimates of allele specific gene expression using RNA-seq, Allim combines two different measures to account for mapping biases. First, Allim generates a polymorphism aware reference genome that accounts for the sequence variation between the alleles of both parents (or parental lines). Second, Allim includes a sequence specific simulation tool to estimate the remaining mapping bias. This estimated mapping bias is then incorporated in the statistical tests for allelic imbalance.
 
 The pipeline requires whole transcript high throughput RNA sequencing (RNA-seq) reads of F1 hybrids. Additionally, either RNA-seq reads for both parents, genomic sequencing reads for both parents or two private genomes for both parents have to be provided in separate files. Allim was tested on Illumina paired-end RNA-seq reads but it can also handle FASTQ files from other NGS sequencing platforms. The provided parental RNA-seq libraries can be from homozygous as well as heterozygous parents (however, all heterozygous loci will be excluded during the analysis).
@@ -27,7 +27,7 @@ Allim has five modules that can be run by a single command. All input parameters
 The source code and the user manual of Allim are available from http://code.google.com/p/allim/
 
 
-=2. Requirements=
+=2. System Requirements=
 
 To use Allim pipeline, user needs to meet these requirements.
   * Linux or Macintosh OSX system or any other Unix 64 bit system with at least 4 GB of RAM and 2 CPU (processors)
@@ -308,7 +308,7 @@ R CMD INSTALL edgeR_1.0.4.tar.gz
 R CMD INSTALL limma_2.0.2.tar.gz
 }}}
 
-=Allim Installation=
+=3. Allim Installation=
 The user can download the latest version of Allim from http://code.google.com/p/allim/. The file to download is called Allim_1.0.tar.gz. Move the file to an appropriate directory and run the following command to uncompress the file:
 {{{
 tar –zxvf Allim_1.0.tar.gz
@@ -319,7 +319,7 @@ Note that after uncompressing the tar.gz file, a new folder will be created name
 
 http://allim.googlecode.com/files/Allim_folder.png
 
-=The Validation of the Installation & Sample Input Files=
+=4. The Validation of the Installation & Sample Input Files=
 To validate the installation of the Allim pipeline it can be run with a small test data set. The test data set and the corresponding Allim configuration files can be obtained from the following URLs:
 
 *Parent1 RNA-seq:* http://allim.googlecode.com/files/parent1_RNAseq_fastq.tar.gz
@@ -364,7 +364,7 @@ To get help on how to run Allim and required parameters enter:
 
 
 
-=Allim Input Description=
+=5. Allim Input Description=
 Allim can be run with the following command, which should be run under the Allim_1.0 directory:
 {{{
 	python 01-allim.py --option-file <path to AllimOptions file>
@@ -392,7 +392,7 @@ http://allim.googlecode.com/files/third-party-softwares.png
 The remaining input parameters are described in the following chapter along with the Allim modules description.
 
 
-=Allim Modules Description=
+=6. Allim Modules Description=
 ==Module 1: Identification of fixed SNPs==
 This module is only used when the input option, “AllimOptions_2Pexpr” is chosen (RNA-seq or genomic DNA reads of both parents are provided). With the input option, “AllimOptions_2Pgenomes” (two genomes, one for each parent) is used this module will be skipped.
 
@@ -497,7 +497,7 @@ http://allim.googlecode.com/files/Table4.png
 
 
 
-=Allim Output / Results Files=
+=7. Allim Output / Results Files=
 After running Allim, the results of the Allim pipeline can be found in the output directory specified in the Allim Options file. Results are provided in the following format.
 
 http://allim.googlecode.com/files/Output.png
@@ -526,7 +526,7 @@ This folder contains the read counts of the experimental data, which were normal
 The remaining two files provide the results of the significance testing for allelic imbalance for the F1 generation. 
 
 
-=Benchmark of the Allim Pipeline=
+=8. Benchmark of the Allim Pipeline=
 
 We have run the Allim pipeline with the following data set of RNA-seq reads from _Drosophila pseudoobscura_ to benchmark the runtime of Allim. The reference genome release 2.23 was taken from Flybase and an improved annotation file of _D. pseudoobscura_ was taken from (_Palmieri et al 2012_). The GTF file with the gene annotation contained 17,112 gene models.
 
@@ -556,38 +556,6 @@ Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 ||5||Statistical test of significant allelic imbalance||3:00||
 
 *Table1: Benchmarks for processing time for each module of Allim*
-
-*Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
-
-
-
-
-=Benchmark for Allim pipeline=
-We have run Allim pipeline with following data sets.
-
-*RNA-Seq reads:*
-
-Parent1 reads: 2 million 100 bp paired-end reads with 68 bp average insert size
-Parent2 reads: 2 million 100 bp paired-end reads with 78 bp average insert size
-Hybrid reads: 2 million 100 bp paired-end reads with 98 bp average insert size
-
-*Computer simulated reads:*
-
-Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
-Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
-
-*Table 5:* Benchmarks for processing time for each module of Allim
-
-||*S.No.*||*Module*||*Time (min:sec)*||
-||1*||Identification of fixed SNPs||95:00||
-||2||Computer simulation of RNA-seq reads with fixed SNPs||20:00||
-||3||Estimation of allele specific expression and residual mapping bias with simulated data||34:00||
-||4||Estimation of allele specific expression with experimental data||24:00||
-||5||Statistical test of allelic imbalance||3:00||
-
-*This step will be skipped when RNA-seq data for parent1 and parent2 not available.
-
-
 
 *Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
 
