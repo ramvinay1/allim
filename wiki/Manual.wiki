@@ -455,7 +455,8 @@ G-tests of allelic imbalance for each gene/exon are provided for samples without
 For both approaches (G-test, ANOVA) three different correction factors are implemented in Allim, namely 1) Library size normalization, 2) Mapping bias correction and 3) Rescaling of the corrected read count. These different normalization steps are explained in detail below together with examples (tables 1-4).
 
 
-1) Library size normalization
+*1) Library size normalization*
+
 Libraries are normalized by the TMM factor (trimmed mean of M-values normalization method; Robinson and Oshlack 2010). The factor is calculated using the bioconductor package edgeR (Robinson et al. 2010) for each parental library and the F1 library for each replicate. Individual gene counts are then corrected by the TMM factor of the respective library. Note that for each hybrid library only one TMM factor has to be calculated. This factor is used for the expression profile of both parental alleles. Table 1 provides read counts before and table 2 after the first normalization step.
 
 http://allim.googlecode.com/files/Table1.png
