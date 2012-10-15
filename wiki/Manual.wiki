@@ -510,16 +510,13 @@ http://allim.googlecode.com/files/Output.png
 
 
 *<01_fixed_SNP>:*
-
 This folder contains the identified fixed SNPs between the parental genotypes (parental lines). The number at the beginning of the file indicates in which cycle of remapping the fixed SNPs were called. “n” is a parameter that has to be provided by the user.
 
 *<02_simulation_data_ase>:*
-
 This folder contains the expression tables with the raw read counts of the simulated data for both parental genotypes (lines). Profiles are obtained for genes as well as for exons as units for which gene expression is measured.
 
 
 *<03_experimental_data_ase>:*
-
 This folder contains the expression tables with the raw read counts of the experimental data for all replicates of both parental genotypes (lines) and the F1 generation. Profiles are obtained for genes as well as for exons as units of expression.
 
 *<04_statistical test>:*
