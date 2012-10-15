@@ -600,7 +600,7 @@ b) pooled RNA-seq reads from libraries ps88 females and ps94 females (Table 6)
 
 In contrast to RNA-seq data of individuals from the F1 generation, the parental origin of the pooled reads from both lines is known. Therefore, the percentage of reads that were assigned to the correct parental line by Allim could be determined. The results show that between 98.60% and 99.97% of the reads were assigned to the correct parental line by Allim (Table 7). The marginal difference between the success rates of both lines is due to the fact that ps94 is a derivative of the strain for which the reference genome sequence was provided to Allim. For this reason reads originating from ps94 that span polymorphic sites, which did not meet the threshold for calling fixed SNPs, are more easily mapped than reads originating from ps88. Since we used the most extreme case for a reference bias, the small bias observed suggests that under less extreme settings, Allim will provide almost no bias caused by the reference genome. 
 
-'2. Simulated data:*
+*2. Simulated data:*
 
 RNA-seq reads were simulated with the procedure described in module 2 based on the 154,920 fixed SNPs determined for the experimental data previously. (Approach: For both parental genomes the same number of RNA-seq reads were simulated for the identical genomic positions.) For the simulation the following Allim parameters were used:
 ASCII_QUALITY_LETTER = e
@@ -620,23 +620,33 @@ The results show that 99.99% of the simulated reads were assigned to the correct
 
 
 
-==Female data==
-Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.948; P-value < 2.2e-16.
+==Improvement of mapping quality via modification of the reference genome==
 
-http://allim.googlecode.com/files/female-expr.jpg
+We validated the improvement of the mapping quality via reference modification by mapping RNA-seq reads (experimental & simulated data) to the original as well as the modified genomes. Mapping success was then compared between both approaches. The mapping success varies between 85.97% and 92.15% between the different data sets. However, in all data sets an increase in mapping success after editing of the genomes between 0.07% and 0.32% can be detected (Table 8).
 
-==Male data==
-Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.959; P-value < 2.2e-16.
 
-http://allim.googlecode.com/files/male-expr.jpg
 
-==Simulation data==
-Expression of each gene in strainA and strainB plotted as given below. Correlation coefficient (R^2)=0.992; P-value < 2.2e-16.
 
-http://allim.googlecode.com/files/simulated-expr.jpg
 
-== Gene expression ratio==
-The expression ratio for each expressed gene is calculated as strainA/strainB for both data (Females and Males). In given boxplot the log10 ratio is shown on y-axis.
+We validated the performance of our pipeline with experimental as well as simulated RNA-seq reads. The experimental data consisted of paired-end RNA-seq reads from males and females of two different isofemale lines of Drosophila pseudoobscura (Table 6, Palmieri et al 2012).
 
- 
-http://allim.googlecode.com/files/expr-ratio-boxplot.jpg
+=10. Contact Information= 
+
+Prof. Dr. Christian Schlötterer
+christian.schloetterer@vetmeduni.ac.at
+
+Ram Vinay Pandey
+ramvinay.pandey@vetmeduni.ac.at
+
+Susanne U. Franssen
+susanne.franssen@vetmeduni.ac.at
+
+
+=11. References=
+
+1.  Wu TD, Nacu S (2010) Fast and SNP-tolerant detection of complex variants and splicing in short reads. Bioinformatics 26: 873-881. 
+2. Robinson MD, Oshlack A (2010) A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biol. 11(3):R25
+3. Robinson MD, McCarthy DJ, Smyth GK (2010) edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. Bioinformatics 26(1):139-140.
+4. Palmieri N, Nolte V, Suvorov A, Kosiol C, Schlötterer C (2012) Evaluation of Different Reference Based Annotation Strategies Using RNA-Seq – A Case Study in Drososphila pseudoobscura. PLoS One, 7, e46415.
+
+
