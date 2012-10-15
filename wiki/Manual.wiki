@@ -364,6 +364,25 @@ To get help on how to run Allim and required parameters enter:
 
 
 
+=Allim Input Description=
+Allim can be run with the following command, which should be run under the Allim_1.0 directory:
+{{{
+	python 01-allim.py --option-file <path to AllimOptions file>
+}}}
+
+However, before running Allim with your own dataset all parameters have to be specified in the appropriate Allim Options files (AllimOptions_2Pexpr OR AllimOptions_2Pgenomes). 
+
+==Global input parameters==
+
+Figure 1 shows global input parameters, which are essential for all modules of Allim. Figure 2 shows how the paths to third party tools that are used by Allim can be specified in the AllimOptions file.
+
+
+http://allim.googlecode.com/files/global-parameters.png
+
+*Figure 1: Global input parameters of the Allim pipeline.* The figure shows an extract from the AllimOptions_2Pexpr file. In AlimOptions_2Pgenomes, the parameter REFERENCEE_FASTA is replaced by the two parameters: PARENT1_REFERENCEE_FASTA AND PARENT2_REFERENCEE_FASTA.
+
+
+
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
 
