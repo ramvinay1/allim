@@ -3,7 +3,7 @@
 
 <wiki:toc max_depth="3" />
 
-=1. Introduction=
+
 =Introduction=
 Allim, Allelic imbalance meter, offers an integrated and user-friendly solution for measuring allele specific gene expression (ASE) within species. Allim estimates allelic imbalance in F1 hybrids. Since mapping bias is the largest problem for reliable estimates of allele specific gene expression using RNA-seq, Allim combines two different measures to account for mapping biases. First, Allim generates a polymorphism aware reference genome that accounts for the sequence variation between the alleles of both parents (or parental lines). Second, Allim includes a sequence specific simulation tool to estimate the remaining mapping bias. This estimated mapping bias is then incorporated in the statistical tests for allelic imbalance.
 
