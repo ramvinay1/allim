@@ -467,6 +467,7 @@ http://allim.googlecode.com/files/Table2.png
 
 
 *2) Mapping bias correction*
+
 The residual mapping bias after accounting for fixed SNPs between the two parental lines is accounted for via the mapping bias coefficient. This coefficient is defined as the expression ratio between both parental alleles obtained from the simulated data (module 2).
 
 {{{
@@ -481,6 +482,7 @@ http://allim.googlecode.com/files/Table3.png
 
 
 *3) Rescaling of the corrected read count*
+
 After applying the above two normalization factors, read counts for the different genes across libraries can be inflated or decreased depending on the values of the respective factors used. As inflation results in an unjustified increase of power in the statistical test and a lowered count in an unjustified decrease, the values have to be rescaled on a gene-wise level. This is done via the following rescaling factor.
 
 {{{
