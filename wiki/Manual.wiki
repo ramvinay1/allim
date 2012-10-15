@@ -531,6 +531,23 @@ The remaining two files provide the results of the significance testing for alle
 We have run the Allim pipeline with the following data set of RNA-seq reads from _Drosophila pseudoobscura_ to benchmark the runtime of Allim. The reference genome release 2.23 was taken from Flybase and an improved annotation file of _D. pseudoobscura_ was taken from (_Palmieri et al 2012_). The GTF file with the gene annotation contained 17,112 gene models.
 
 
+*RNA-seq reads (Illumina, GA II):*
+
+Parent1 reads: 2 million 100 bp paired-end reads with 68 bp average insert size.
+
+Parent2 reads: 2 million 100 bp paired-end reads with 78 bp average insert size.
+
+F1 reads: 2 million 100 bp paired-end reads with 98 bp average insert size
+
+
+The Allim run simulated the following amount of sequence reads:
+
+Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
+
+Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
+
+
+
 
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
