@@ -319,6 +319,21 @@ Note that after uncompressing the tar.gz file, a new folder will be created name
 
 http://allim.googlecode.com/files/Allim_folder.png
 
+=The Validation of the Installation & Sample Input Files=
+To validate the installation of the Allim pipeline it can be run with a small test data set. The test data set and the corresponding Allim configuration files can be obtained from the following URLs:
+
+Parent1 RNA-seq: http://allim.googlecode.com/files/parent1_RNAseq_fastq.tar.gz
+Parent2 RNA-seq: http://allim.googlecode.com/files/parent2_RNAseq_fastq.tar.gz
+F1 RNA-seq: http://allim.googlecode.com/files/F1_RNAseq_fastq.tar.gz
+Parent1 genome: http://allim.googlecode.com/files/parent1_genome.fa
+Parent2 genome: http://allim.googlecode.com/files/parent2_genome.fa
+Reference fasta file: http://allim.googlecode.com/files/reference.fa
+Gene annotation file: http://allim.googlecode.com/files/reference.gtf
+Allim configuration file: http://allim.googlecode.com/files/AllimOptions_2Pexpr
+Allim configuration file: http://allim.googlecode.com/files/AllimOptions_2Pgenomes
+
+
+
 
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
