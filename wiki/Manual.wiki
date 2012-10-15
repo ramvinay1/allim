@@ -316,35 +316,10 @@ tar –zxvf Allim_1.0.tar.gz
 
 Note that after uncompressing the tar.gz file, a new folder will be created named Allim_1.0. This directory contains the following files:
 
-{{{
-< Allim_1.0>
-	|
-	<01-allim.py>
-	<02-statistical-test.py>
-	<AllimOptions_2Pexpr>
-	<AllimOptions_2Pgenomes>
-	<classes>
-|
--	<ase.py>
--	<call_gsnap.py>
--	<fixed_snp.py>
--	<gff2gtf.py>
--	<input_parse.py>
--	<inter_species.py>
--	<simulateRNAseq.py>
--	<simulation.py>
--	<utility.py>
-	<executables>
-|
--	<bamToBed>
--	<intersectBed>
--	<sortBed>
--	<samtools>
--	<BuildBamIndex.jar>
--	<MergeSamFiles.jar>
--	<SortSam.jar>
 
-}}}
+http://allim.googlecode.com/files/Allim_folder.png
+
+
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
 
