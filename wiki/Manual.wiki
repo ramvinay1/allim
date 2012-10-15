@@ -625,10 +625,10 @@ The results show that 99.99% of the simulated reads were assigned to the correct
 We validated the improvement of the mapping quality via reference modification by mapping RNA-seq reads (experimental & simulated data) to the original as well as the modified genomes. Mapping success was then compared between both approaches. The mapping success varies between 85.97% and 92.15% between the different data sets. However, in all data sets an increase in mapping success after editing of the genomes between 0.07% and 0.32% can be detected (Table 8).
 
 
+http://allim.googlecode.com/files/Table8.png
 
 
-
-We validated the performance of our pipeline with experimental as well as simulated RNA-seq reads. The experimental data consisted of paired-end RNA-seq reads from males and females of two different isofemale lines of Drosophila pseudoobscura (Table 6, Palmieri et al 2012).
+We validated the performance of our pipeline with experimental as well as simulated RNA-seq reads. The experimental data consisted of paired-end RNA-seq reads from males and females of two different isofemale lines of _Drosophila pseudoobscura_ (Table 6, _Palmieri et al 2012_).
 
 =10. Contact Information= 
 
