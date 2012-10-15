@@ -540,11 +540,24 @@ Parent2 reads: 2 million 100 bp paired-end reads with 78 bp average insert size.
 F1 reads: 2 million 100 bp paired-end reads with 98 bp average insert size
 
 
-The Allim run simulated the following amount of sequence reads:
+*The Allim run simulated the following amount of sequence reads:*
 
 Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 
 Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
+
+
+
+||*S.No.*||*Module*||*Time (min:sec)*||
+||1.||Finding fixed SNP||95:00||
+||2.||Computer simulation of RNA-Seq reads||20:00||
+||3.||Estimating Allele Specific Expression with experimental data||24:00||
+||4.||Estimating Allele Specific Expression with simulated data||34:00||
+||5||Statistical test of significant allelic imbalance||3:00||
+
+*Table1: Benchmarks for processing time for each module of Allim*
+
+*Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
 
 
 
@@ -563,19 +576,29 @@ Hybrid reads: 2 million 100 bp paired-end reads with 98 bp average insert size
 Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 
-||*S.No.*||*Module*||*Time (min:sec)*||
-||1.||Finding fixed SNP||95:00||
-||2.||Computer simulation of RNA-Seq reads||20:00||
-||3.||Estimating Allele Specific Expression with experimental data||24:00||
-||4.||Estimating Allele Specific Expression with simulated data||34:00||
-||5||Statistical test of significant allelic imbalance||3:00||
+*Table 5:* Benchmarks for processing time for each module of Allim
 
-*Table1: Benchmarks for processing time for each module of Allim*
+||*S.No.*||*Module*||*Time (min:sec)*||
+||1*||Identification of fixed SNPs||95:00||
+||2||Computer simulation of RNA-seq reads with fixed SNPs||20:00||
+||3||Estimation of allele specific expression and residual mapping bias with simulated data||34:00||
+||4||Estimation of allele specific expression with experimental data||24:00||
+||5||Statistical test of allelic imbalance||3:00||
+
+*This step will be skipped when RNA-seq data for parent1 and parent2 not available.
+
+
 
 *Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
 
-=Validation=
-We used RNA-Seq data from females and males of two different Drosophila pseudoobscura isofemale lines (*_Table2_*) and ran our Allim pipleline after pooling the reads from both libraries. In contrast to experiments measuring allelic imbalance, the origin of each read is known.Our results show that 99% (*_Table3_*) of the informative reads are assigned to correct parental allele.
+
+
+
+=9. Validation=
+We validated the performance of our pipeline with experimental as well as simulated RNA-seq reads. The experimental data consisted of paired-end RNA-seq reads from males and females of two different isofemale lines of _Drosophila pseudoobscura_ (Table 6; _Palmieri et al 2012_).
+
+
+
 
 *Table2: RNA-Seq data used for validation*
 
