@@ -577,13 +577,46 @@ We validated the performance of our pipeline with experimental as well as simula
 ||ps94 males||79.21||128||100||
 ||ps94 females||80.00||68||100||
 
-Further more validated Allim via simulations of RNA-Seq of both parental alleles (i.e.: 2x 100bp paired ends with 78bp insert size). For both genomes the same number of reads covering a polymorphic site were generated. Thus, in absence of a mapping bias, all genes should have an expression ratio of one for every gene. This result also shows about 99.99% (*_Table3_*) informative reads are assigned to correct parental allele. 
+The four libraries were given as input to Allim to call fixed differences between both isofemale lines (different sexes were used as biological replicates). Module 1 of the pipeline identified154,920 fixed SNPs present in a total of 9,626 genes. The following Allim parameters were used to call the fixed SNPs:
+CALCULATE_FIXED_SNP_ITERATION = 2
+MINIMUM_COVERAGE = 2
+FIXED_ALLELE_FREQURNCY = 1.0
+MINIMUM_BASE_QUALITY = 20
+MINIMUM_MAPPING_QUALITY = 20
+The reference genome release 2.23 was taken from Flybase and an improved annotation file of _D. pseudoobscura_ was taken from (_Palmieri et al 2012_). The GTF file with the gene annotation contained 17,112 gene models.
 
-*Table3 Accuracy of Allim pipeline*
-||Dataset||strainA (%)||strainB (%)||
-||Females||99.97||98.96||
-||Males||99.96||98.60||
-||Simulation||99.99||99.99||
+
+
+==Assignment of reads to the correct parental line:==
+
+To test the accuracy of Allim to identify the parental origin of a read, ASE expression profiles were determined for experimental and simulated data:
+
+*1. Experimental data:*
+
+a) pooled RNA-seq reads from libraries ps88 males and ps94 males (Table 6)
+
+b) pooled RNA-seq reads from libraries ps88 females and ps94 females (Table 6)
+
+
+In contrast to RNA-seq data of individuals from the F1 generation, the parental origin of the pooled reads from both lines is known. Therefore, the percentage of reads that were assigned to the correct parental line by Allim could be determined. The results show that between 98.60% and 99.97% of the reads were assigned to the correct parental line by Allim (Table 7). The marginal difference between the success rates of both lines is due to the fact that ps94 is a derivative of the strain for which the reference genome sequence was provided to Allim. For this reason reads originating from ps94 that span polymorphic sites, which did not meet the threshold for calling fixed SNPs, are more easily mapped than reads originating from ps88. Since we used the most extreme case for a reference bias, the small bias observed suggests that under less extreme settings, Allim will provide almost no bias caused by the reference genome. 
+
+'2. Simulated data:*
+
+RNA-seq reads were simulated with the procedure described in module 2 based on the 154,920 fixed SNPs determined for the experimental data previously. (Approach: For both parental genomes the same number of RNA-seq reads were simulated for the identical genomic positions.) For the simulation the following Allim parameters were used:
+ASCII_QUALITY_LETTER = e
+READ_LENGTH = 100
+INSERT_SIZE = 78
+
+The results show that 99.99% of the simulated reads were assigned to the correct parental line by Allim (Table 7). As the reads were directly simulated based on the reference genome with only fixed differences edited, this remaining error occurs during the mapping with GSNAP (possibly for reads spanning splice junctions).
+
+
+
+*Table 7: RNA-seq data sets used to test accuracy of Allim to identify the parental origin of a read.*
+
+||Dataset||# Correctly identified reads, ps88 (%)||# Correctly identified reads, ps94 (%)||
+||Pooled reads from females of both lines||99.97||98.96||
+||Pooled reads from males of both lines||99.96||98.60||
+||Simulated reads for both parental genomes||99.99||99.99||
 
 
 
