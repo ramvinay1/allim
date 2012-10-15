@@ -532,18 +532,13 @@ We have run the Allim pipeline with the following data set of RNA-seq reads from
 
 
 *RNA-seq reads (Illumina, GA II):*
-
 Parent1 reads: 2 million 100 bp paired-end reads with 68 bp average insert size.
-
 Parent2 reads: 2 million 100 bp paired-end reads with 78 bp average insert size.
-
 F1 reads: 2 million 100 bp paired-end reads with 98 bp average insert size
 
 
 *The Allim run simulated the following amount of sequence reads:*
-
 Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
-
 Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 
 
@@ -556,7 +551,6 @@ Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 ||4.||Estimating Allele Specific Expression with simulated data||34:00||
 ||5||Statistical test of significant allelic imbalance||3:00||
 
-*Table1: Benchmarks for processing time for each module of Allim*
 
 *Note:* All benchmarks have been done on a Mac OS X 10.6.8, 2x2.8 GHz Quad-Core Intel Xeon, with 4 GB of RAM using 4 processors (CPU)
 
