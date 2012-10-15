@@ -547,6 +547,7 @@ Parent1 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 Parent2 reads: 10.26 million 100 bp paired-end reads with 78 bp insert size
 
 
+*Table 5: Benchmarks for processing time for each module of Allim*
 
 ||*S.No.*||*Module*||*Time (min:sec)*||
 ||1.||Finding fixed SNP||95:00||
