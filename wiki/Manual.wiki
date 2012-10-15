@@ -383,6 +383,16 @@ http://allim.googlecode.com/files/global-parameters.png
 
 
 
+http://allim.googlecode.com/files/third-party-softwares.png
+
+*Figure 2: Specifications of full paths of external software/tools used in Allim.*
+
+
+
+The remaining input parameters are described in the following chapter along with the Allim modules description.
+
+
+
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
 
