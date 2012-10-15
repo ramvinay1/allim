@@ -633,20 +633,25 @@ We validated the performance of our pipeline with experimental as well as simula
 =10. Contact Information= 
 
 Prof. Dr. Christian Schlötterer
+
 christian.schloetterer@vetmeduni.ac.at
 
 Ram Vinay Pandey
+
 ramvinay.pandey@vetmeduni.ac.at
 
 Susanne U. Franssen
+
 susanne.franssen@vetmeduni.ac.at
 
 
 =11. References=
 
-1.  Wu TD, Nacu S (2010) Fast and SNP-tolerant detection of complex variants and splicing in short reads. Bioinformatics 26: 873-881. 
+1.  Wu TD, Nacu S (2010) Fast and SNP-tolerant detection of complex variants and splicing in short reads. Bioinformatics 26: 873-881.
+ 
 2. Robinson MD, Oshlack A (2010) A scaling normalization method for differential expression analysis of RNA-seq data. Genome Biol. 11(3):R25
-3. Robinson MD, McCarthy DJ, Smyth GK (2010) edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. Bioinformatics 26(1):139-140.
-4. Palmieri N, Nolte V, Suvorov A, Kosiol C, Schlötterer C (2012) Evaluation of Different Reference Based Annotation Strategies Using RNA-Seq – A Case Study in Drososphila pseudoobscura. PLoS One, 7, e46415.
 
+3. Robinson MD, McCarthy DJ, Smyth GK (2010) edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. Bioinformatics 26(1):139-140.
+
+4. Palmieri N, Nolte V, Suvorov A, Kosiol C, Schlötterer C (2012) Evaluation of Different Reference Based Annotation Strategies Using RNA-Seq – A Case Study in Drososphila pseudoobscura. PLoS One, 7, e46415.
 
