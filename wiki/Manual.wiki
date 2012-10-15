@@ -392,6 +392,40 @@ http://allim.googlecode.com/files/third-party-softwares.png
 The remaining input parameters are described in the following chapter along with the Allim modules description.
 
 
+=Allim Modules Description=
+==Module 1: Identification of fixed SNPs==
+This module is only used when the input option, “AllimOptions_2Pexpr” is chosen (RNA-seq or genomic DNA reads of both parents are provided). With the input option, “AllimOptions_2Pgenomes” (two genomes, one for each parent) is used this module will be skipped.
+
+The module determines fixed SNPs between the parental genotypes (lines) based on the user provided RNA-seq libraries. It accepts multiple replicates for the calculation of fixed SNPs to increase the power and accuracy of SNP detection. For each parental genotype and replicate RNA-seq data (alternatively genomic DNA reads) can be provided for paired-end sequence data (pairs of fastq files, read1.fq and read2.fq, for each condition). Besides the RNA-seq data (genomic reads) further parameters can be specified as shown in Figure 3. The type of data that is used for calling fixed SNPs, either RNA or genomic sequence is reads is specified via the parameter SEQUENCE_TYPE (“mRNA” or “DNA”).
+
+In Allim the identification of fixed SNPs is based on the alignments of the RNA-seq reads (alternatively genomic DNA reads) performed with the GSNAP mapper (Wu & Nacu 2010). GSNAP is a unique mapper that can integrate given SNP information into the mapping algorithm in order to improve read mapping of allelic variants. Allim makes use of this functionality by integrating the fixed SNP information into the mapping process to improve the quality of the alignments. However, in the beginning no fixed SNP information is available. Therefore, multiple cycles of read mapping and subsequent calling of fixed SNPs are required to improve the quality of the alignment and the identified fixed SNPs. The user can specify how often this procedure should be repeated (minimum & default: 2 cycles). The number of cycles given as input provides the opportunity to fine-tune SNP calling accuracy, as this is dependent on the accuracy of the alignment. As output a fixed SNP table for each cycle is saved in the given output directory. The fixed SNP information determined in the last cycle is used in subsequent modules.
+
+The parameters MINIMUM_COVERAGE, FIXED_ALLELE_FREQUENCY, MINIMUM_MAPPING_QUALITY and MINIMUM_BASE_QUALITY are used in each cycle to determine fixed SNPs between both parental genotypes (Figure 3).
+
+
+http://allim.googlecode.com/files/fixed-snp.jpg
+
+
+*Figure 3: Input options for the identification of fixed SNPs between the two parental genotypes.* The figure shows an extract from the AllimOptions_2Pexpr file.
+
+
+
+==Module 2: Computer simulation of RNA-seq reads==
+This module simulates paired-end Illumina reads in fastq format. It internally uses the fixed SNP information to create two “private genomes”, one for each parent or alternatively the user provided reference genomes. Further it used the information from the provided GTF file (provided as a global input parameter).
+
+For the read simulation, first two parent specific genomes (“private genomes”), which only differ with respect to the identified fixed SNPs, are generated. For each private genome all possible paired-end reads that cover at least one fixed SNP position are simulated once. Therefore, the expression ratio been reads simulated for each parent should equal 1 for each gene. In contrast, the deviation from an expression ratio of 1 in the simulated data for a gene indicates a remaining mapping bias, which is caused by the mapper itself.
+
+*Algorithm:*
+
+*1.*        Creation of two parent specific (“private”) genomes via the substitution of the base at a fixed SNP position in initial reference genome (this step is skipped if two parental genomes are provided initially).
+*2.*	Construction of the longest transcript for each gene for both private genomes separately. Due to step 1, the transcripts for both private genomes only differ at the fixed SNP positions (AllimOptions_2Pexpr). If two parental genomes are provided initially the both genomes must have identical genome length and identical gene annotation. Each transcript consists of the 5’UTR, the CDS and the 3’UTR.
+*3.*	Simulation of the reads for both “transcriptomes” (as defined in step 2) separately. This results in the same number of reads from the identical genomic locations for both parents. The simulation is implemented via a sliding window approach where the “simulation window” slides one base pair at a time from 5’ towards 3’ of transcript. Only the reads that span a fixed SNP are kept as the remaining ones are not informative for the subsequent analysis (they cannot be used to determine ASE). This approach results in equal coverage of SNP position in the middle of a transcript and decreasing coverage of SNPs towards both ends of the transcript (end of a transcript: 2 x read length + insert size).
+
+Additional parameters that define the properties of the simulated reads are shown in Figure 4.
+
+
+
+
 
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
