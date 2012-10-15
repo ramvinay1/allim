@@ -418,12 +418,79 @@ For the read simulation, first two parent specific genomes (“private genomes�
 *Algorithm:*
 
 *1.*        Creation of two parent specific (“private”) genomes via the substitution of the base at a fixed SNP position in initial reference genome (this step is skipped if two parental genomes are provided initially).
+
 *2.*	Construction of the longest transcript for each gene for both private genomes separately. Due to step 1, the transcripts for both private genomes only differ at the fixed SNP positions (AllimOptions_2Pexpr). If two parental genomes are provided initially the both genomes must have identical genome length and identical gene annotation. Each transcript consists of the 5’UTR, the CDS and the 3’UTR.
+
 *3.*	Simulation of the reads for both “transcriptomes” (as defined in step 2) separately. This results in the same number of reads from the identical genomic locations for both parents. The simulation is implemented via a sliding window approach where the “simulation window” slides one base pair at a time from 5’ towards 3’ of transcript. Only the reads that span a fixed SNP are kept as the remaining ones are not informative for the subsequent analysis (they cannot be used to determine ASE). This approach results in equal coverage of SNP position in the middle of a transcript and decreasing coverage of SNPs towards both ends of the transcript (end of a transcript: 2 x read length + insert size).
 
 Additional parameters that define the properties of the simulated reads are shown in Figure 4.
 
 
+http://allim.googlecode.com/files/simulation.png
+
+*Figure 4: Input options for the computer simulation of RNA-seq reads from two parent genotypes.* The figure shows an extract from the AllimOptions file.
+
+
+
+==Modules 3 & 4: Estimation of the remaining mapping bias with simulated data & Estimation of allele specific expression for experimental data==
+
+Module 3 is designed to estimate the remaining mapping bias for each gene (exon) via the simulated RNA-seq reads. In the simulated data the number of reads for each transcript is identical for both parental genotypes (parental lines). Resulting expression ratios between counts for both genotypes (parental lines) should therefore be 1 for each gene (exon) in the absence of a remaining mapping bias due to the mapper. Ratios deviating from 1 indicate a remaining mapping bias and are used as a correction factor to determine statistical significance of allelic imbalance in module 5.
+
+Module 4 is designed to estimate the total gene expression in both parental lines and allele specific gene expression in the F1 generation. The module generates an expression table for all genes and all exons in two separate files. This expression table will be subsequently used in module 5 to test for significant allelic imbalance.
+
+Modules 3 & 4 make use of a two-genome approach to determine allele specific expression. In this approach the two “private” genomes (one for each parental genotype / parental line) that where created for the RNA-seq read simulation in module 2 (AllimOptions_2Pexpr) or provided by the user (AllimOptions_2Pgenomes) are used as a “combined reference” (genome of parent 1 plus genome of parent 2) to map RNA-seq reads. Only the reads that map unambiguously (no multiple equally good mapping positions) are used to determine allele specific expression. This approach excludes reads that do not span fixed SNPs as these have at least two equally good mapping locations in the “combined reference”.
+
+The input files and other parameters for modules 3& 4 can be specified in the AllimOptions file as shown in figure 5.
+
+
+http://allim.googlecode.com/files/ASE.png
+
+*Figure 5: Input options for estimating total allele specific expression.* The figure shows an extract from the AllimOptions_2Pexpr file. In AlimOptions_2Pgenomes only fastq files for the F1 hybrid have to be provided.
+
+
+
+==Module 5: Statistical test of significant allelic imbalance==
+G-tests of allelic imbalance for each gene/exon are provided for samples without biological replication. If biological replicates are available, Allim provides an alternative approach to determine allelic imbalance across replicates. In an ANOVA framework it is tested whether differences are present in the expression strength between both alleles in the F1 generation. Module 5 returns p-values for each gene (exon) including multiple testing correction via the false discovery rate (FDR).
+
+For both approaches (G-test, ANOVA) three different correction factors are implemented in Allim, namely 1) Library size normalization, 2) Mapping bias correction and 3) Rescaling of the corrected read count. These different normalization steps are explained in detail below together with examples (tables 1-4).
+
+
+1) Library size normalization
+Libraries are normalized by the TMM factor (trimmed mean of M-values normalization method; Robinson and Oshlack 2010). The factor is calculated using the bioconductor package edgeR (Robinson et al. 2010) for each parental library and the F1 library for each replicate. Individual gene counts are then corrected by the TMM factor of the respective library. Note that for each hybrid library only one TMM factor has to be calculated. This factor is used for the expression profile of both parental alleles. Table 1 provides read counts before and table 2 after the first normalization step.
+
+http://allim.googlecode.com/files/Table1.png
+
+
+
+http://allim.googlecode.com/files/Table2.png
+
+
+*2) Mapping bias correction*
+The residual mapping bias after accounting for fixed SNPs between the two parental lines is accounted for via the mapping bias coefficient. This coefficient is defined as the expression ratio between both parental alleles obtained from the simulated data (module 2).
+
+{{{
+Mapping bias coefficient = readcount_simuldata(parent1) / readcount_simuldata(parent2)
+}}}
+
+The mapping bias coefficient is calculated for each gene. All read counts normalized by library size (table 2) are then multiplied by the mapping bias coefficient of the respective gene (table 3).
+
+
+http://allim.googlecode.com/files/Table3.png
+
+
+
+*3) Rescaling of the corrected read count*
+After applying the above two normalization factors, read counts for the different genes across libraries can be inflated or decreased depending on the values of the respective factors used. As inflation results in an unjustified increase of power in the statistical test and a lowered count in an unjustified decrease, the values have to be rescaled on a gene-wise level. This is done via the following rescaling factor.
+
+{{{
+Rescaling factor = expression value before normalization (sum over all samples) /after normalization (sum over all samples)
+}}}
+
+
+All corrected read counts by the two previous correction factors (table 3) are multiplied by the rescaling factor of the respective gene (table 4).
+
+
+http://allim.googlecode.com/files/Table3.png
 
 
 
