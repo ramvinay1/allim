@@ -262,11 +262,11 @@ python setup.py install
 
 
 
-==2.11 Install R package car==
+==2.11 Installation of the R package _car_==
 
-*Step1:* Download R package car source code from http://cran.r-project.org/src/contrib/car_2.0-12.tar.gz
+*Step1:* Download the R package car source code from http://cran.r-project.org/src/contrib/car_2.0-12.tar.gz
 
-*Step2:* Open terminal and run following command to install:
+*Step2:* Open the terminal and run the following command:
 
 {{{
 R CMD INSTALL car_2.0-12.tar.gz
@@ -274,11 +274,11 @@ R CMD INSTALL car_2.0-12.tar.gz
 
 
 
-==2.12 Install R package multcop==
+==2.12 Installation of the R package _multcomp_==
 
-*Step1:* Download R package multcop source code from http://cran.r-project.org/src/contrib/multcomp_1.2-12.tar.gz
+*Step1:* Download R package multcomp source code from http://cran.r-project.org/src/contrib/multcomp_1.2-12.tar.gz
 
-*Step2:* Open terminal and run following command to install:
+*Step2:* Open the terminal and run the following command:
 
 {{{
 R CMD INSTALL multcomp_1.2-12.tar.gz
@@ -286,11 +286,11 @@ R CMD INSTALL multcomp_1.2-12.tar.gz
 
 
 
-==2.13 Install R package edgeR==
+==2.13 Installation of the R package _edgeR_==
 
 *Step1:* Download R package edgeR source code from www.bioconductor.org/packages/2.3/bioc/src/contrib/edgeR_1.0.4.tar.gz
 
-*Step2:* Open terminal and run following command to install:
+*Step2:* Open the terminal and run following command:
 
 {{{
 R CMD INSTALL edgeR_1.0.4.tar.gz
@@ -298,16 +298,53 @@ R CMD INSTALL edgeR_1.0.4.tar.gz
 
 
 
-==2.14 Install R package limma==
+==2.14 Installation of the R package _limma_==
 
 *Step1:* Download R package limma source code from http://phase.hpcc.jp/mirrors/stat/R/CRAN/src/contrib/limma_2.0.2.tar.gz
 
-*Step2:* Open terminal and run following command to install:
+*Step2:* Open the terminal and run the following command:
 
 {{{
 R CMD INSTALL limma_2.0.2.tar.gz
 }}}
 
+=Allim Installation=
+The user can download the latest version of Allim from http://code.google.com/p/allim/. The file to download is called Allim_1.0.tar.gz. Move the file to an appropriate directory and run the following command to uncompress the file:
+{{{
+tar –zxvf Allim_1.0.tar.gz
+}}}
+
+Note that after uncompressing the tar.gz file, a new folder will be created named Allim_1.0. This directory contains the following files:
+
+{{{
+< Allim_1.0>
+	|
+	<01-allim.py>
+	<02-statistical-test.py>
+	<AllimOptions_2Pexpr>
+	<AllimOptions_2Pgenomes>
+	<classes>
+|
+-	<ase.py>
+-	<call_gsnap.py>
+-	<fixed_snp.py>
+-	<gff2gtf.py>
+-	<input_parse.py>
+-	<inter_species.py>
+-	<simulateRNAseq.py>
+-	<simulation.py>
+-	<utility.py>
+	<executables>
+|
+-	<bamToBed>
+-	<intersectBed>
+-	<sortBed>
+-	<samtools>
+-	<BuildBamIndex.jar>
+-	<MergeSamFiles.jar>
+-	<SortSam.jar>
+
+}}}
 =Benchmark for Allim pipeline=
 We have run Allim pipeline with following data sets.
 
