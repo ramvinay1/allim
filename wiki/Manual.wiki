@@ -493,7 +493,7 @@ Rescaling factor = expression value before normalization (sum over all samples) 
 All corrected read counts by the two previous correction factors (table 3) are multiplied by the rescaling factor of the respective gene (table 4).
 
 
-http://allim.googlecode.com/files/Table3.png
+http://allim.googlecode.com/files/Table4.png
 
 
 
