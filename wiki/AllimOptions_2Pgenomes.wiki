@@ -35,7 +35,7 @@ This configuration file can be downloaded from [http://allim.googlecode.com/file
 OUTPUT_DIRECTORY = /Allim_1.0/test_output_2Pgenomes
 
 ## Give the number of replicates your data consists of. 
-REPLICATE_COUNT=2
+REPLICATE_COUNT=1
 
 # Give the path to the fasta files for two parents private genomes.
 # The lenght of both genome and FASTA Sequence ID should be exactly same.
@@ -115,10 +115,10 @@ INSERT_SIZE = 78
 #
 # For each replicate provide 1 file called hybrid (F1)
 #### Replicate 1: F1 (hybrid) fastq file data
-HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data/r1_hybrid_read1.fastq,/Allim_1.0/test_data/r1_hybrid_read2.fastq,128
+HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data/hybrid_read1.fastq,/Allim_1.0/test_data/hybrid_read2.fastq,128
 #
 #### Replicate 2: F1 (hybrid) fastq file data
-HYBRID_FASTQ_FILE_EXPR = /Allim_1.0/test_data/r2_hybrid_read1.fastq,/Allim_1.0/test_data/r2_hybrid_read2.fastq,98
+HYBRID_FASTQ_FILE_EXPR =
 
 #
 #### Replicate 3: F1 (hybrid) fastq file data
