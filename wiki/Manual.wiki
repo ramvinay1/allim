@@ -357,14 +357,14 @@ cd Allim_1.0
 
 *2.* Run the Allim pipeline with the test data set via the following command (the type of the AllimOptions file that is used depends on the type of your input data):
 {{{
-python 01-allim.py --option-file AllimOptions_2Pexpr
+python allim.py --option-file AllimOptions_2Pexpr
 OR
-python 01-allim.py --option-file AllimOptions_2Pgenomes
+python allim.py --option-file AllimOptions_2Pgenomes
 }}}
 
 To get help on how to run Allim and required parameters enter: 
 {{{
-	python 01-allim.py –help
+	python allim.py –help
 }}}
 
 
@@ -372,7 +372,7 @@ To get help on how to run Allim and required parameters enter:
 =5. Allim Input Description=
 Allim can be run with the following command, which should be run under the Allim_1.0 directory:
 {{{
-	python 01-allim.py --option-file <path to AllimOptions file>
+	python allim.py --option-file <path to AllimOptions file>
 }}}
 
 However, before running Allim with your own dataset all parameters have to be specified in the appropriate Allim Options files (AllimOptions_2Pexpr OR AllimOptions_2Pgenomes). 
